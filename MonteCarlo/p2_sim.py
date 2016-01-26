@@ -1,16 +1,16 @@
 from p2_game import create_game, State
 from timeit import default_timer as time
 
-import mcts_vanilla2 as red_bot 
+import mcts_modified as red_bot 
 import mcts_vanilla as blue_bot
 
 BOTS = {'red': red_bot, 'blue': blue_bot}
 
 # You can set the MCTS tree size like this:
-"""if hasattr(red_bot, 'num_nodes'):
-    red_bot.num_nodes = 10000
+if hasattr(red_bot, 'num_nodes'):
+    red_bot.num_nodes = 1000
 if hasattr(blue_bot, 'num_nodes'):
-    blue_bot.num_nodes = 100"""
+    blue_bot.num_nodes = 1000
 
 rounds = 100
 wins = {}

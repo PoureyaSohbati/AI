@@ -73,7 +73,8 @@ def best_first_move(moves, bot, state):
         if cs.player_turn == bot:
             return move
     return choice(moves)
-    
+
+
 
 def backpropagate(node, won):
     """ Navigates the tree from a leaf node to the roo, updating the win and visit count of each node along the path.
@@ -117,7 +118,7 @@ def think(state):
         # backpropagate
         if sampled_game.winner == 'tie':
             win = 0
-        elif state.player_turn == sampled_game.winner:
+        elif identity_of_bot == sampled_game.winner:
             win = 1
         else:
             win = -1

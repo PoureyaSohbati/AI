@@ -3,7 +3,7 @@ from mcts_node import MCTSNode
 from random import choice
 from math import sqrt, log
 
-num_nodes = 100
+num_nodes = 1000
 explore_faction = 2.
 
 def traverse_nodes(node, state, identity):
@@ -83,7 +83,6 @@ def think(state):
     Returns:    The action to be taken.
 
     """
-    
     identity_of_bot = state.player_turn
     root_node = MCTSNode(parent=None, parent_action=None, action_list=state.legal_moves)
 
@@ -103,7 +102,7 @@ def think(state):
         # backpropagate
         if sampled_game.winner == 'tie':
             win = 0
-        elif state.player_turn == sampled_game.winner:
+        elif identity_of_bot == sampled_game.winner:
             win = 1
         else:
             win = -1
