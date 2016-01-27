@@ -3,17 +3,19 @@ from heapq import heappush, heappop
 
 def find_path(source, destination, mesh):
 	queue = []
-	dist = {}
-	prev = {}
+	forward_dist = {}
+	backward_dist = {}
+	forward_prev = {}
+	backward_prev = {}
 	path = []
 	visited = []
-	coord = {}
+	forward_coord = {}
+	backward_coord = {}
 
 	sourceBox = findBox(source, mesh)
 	visited.append(sourceBox)
 	destinationBox = findBox(destination, mesh)
-	#print(source, destination)
-	#print(sourceBox, destinationBox)
+
 
 	if destinationBox == None or sourceBox == None:
 		print("No Path!")
@@ -21,46 +23,74 @@ def find_path(source, destination, mesh):
 
 	boxes = list(mesh['boxes'])
 	for box in boxes:
-		dist[box] = inf
-		prev[box] = None
-		coord[box] = None
+		forward_dist[box] = inf
+		forward_prev[box] = None
+		backward_dist[box] = inf
+		backward_prev[box] = None
 
-	dist[sourceBox] = 0
-	prev[sourceBox] = None
-	coord[sourceBox] = source
-	heappush(queue, (0, sourceBox))
+	forward_dist[sourceBox] = 0
+	forward_prev[sourceBox] = None
+	backward_dist[destinationBox] = 0
+	backward_prev[destinationBox] = None
+	forward_coord[sourceBox] = source
+	backward_coord[destinationBox] = destination
+
+	heappush(queue, (0, sourceBox, 'destination'))
+	heappush(queue, (0, destinationBox, 'source'))
+
+	#counterD = 0
+	#counterS = 0
 
 	while queue:
-		d, box = heappop(queue)
+		d, box, goal = heappop(queue)
 
-		if box == destinationBox:
-			while box != None:
-				path.append(box)
-				box = prev[box]
+		if(backward_prev[box] and forward_prev[box]):
+			b = box
+			while forward_prev[b] != None:
+				path.append((forward_coord[forward_prev[b]], forward_coord[b]))
+				b = forward_prev[b]
 			path.reverse()
+			path.append((forward_coord[box], backward_coord[box]))
+			while backward_prev[box] != None:
+				path.append((backward_coord[box], backward_coord[backward_prev[box]]))
+				box = backward_prev[box]
 
-			#print (path)
-			c = coordinate(path, coord, destination)
-			return c, visited
+			#print(counterD, counterS)
+			return path, visited
 
 		neighbors = mesh['adj'][box]
 		for neighbor in neighbors:
-			nc = find_box_coordinate(coord[box], neighbor)
-			act_dist = actual_distance(coord[box], nc)
-			alt = dist[box] + act_dist
-			if alt < dist[neighbor]:
-				dist[neighbor] = alt
-				prev[neighbor] = box
-				coord[neighbor] = nc
-				if neighbor not in queue:
-					visited.append(neighbor)
-					heappush(queue, (alt + heuristic(nc, destination), neighbor))
+
+			if goal == 'destination':
+				#counterD += 1
+				nc = find_box_coordinate(forward_coord[box], neighbor)
+				act_dist = actual_distance(forward_coord[box], nc)
+				alt = forward_dist[box] + act_dist
+				if alt < forward_dist[neighbor]:
+					forward_dist[neighbor] = alt
+					forward_prev[neighbor] = box
+					forward_coord[neighbor] = nc
+					if neighbor not in queue:
+						visited.append(neighbor)
+						heappush(queue, (alt + heuristic(nc, destination), neighbor, goal))
+
+			else:
+				#counterS += 1
+				nc = find_box_coordinate(backward_coord[box], neighbor)
+				act_dist = actual_distance(backward_coord[box], nc)
+				alt = backward_dist[box] + act_dist
+				if alt < backward_dist[neighbor]:
+					backward_dist[neighbor] = alt
+					backward_prev[neighbor] = box
+					backward_coord[neighbor] = nc
+					if neighbor not in queue:
+						visited.append(neighbor)
+						heappush(queue, (alt + heuristic(nc, source), neighbor, goal))
 
 	print ("No Path!")
 	return [], []
 
 def findBox(coor, mesh):
-	#print(coor[0], coor[1])
 	boxes = list(mesh['boxes'])
 	for box in boxes:
 		if box[0] < coor[0] and box[1] > coor[0]: # between x
@@ -68,17 +98,8 @@ def findBox(coor, mesh):
 				return box
 	return None
 
-def coordinate(boxes, coord, destination):
-	c = []
-	for i in range(len(boxes)-1):
-		c.append((coord[boxes[i]],coord[boxes[i+1]]))
-	c.append((coord[boxes[-1]], destination))
-	return c
-
-
 def heuristic (point1, point2):
-	distance = sqrt(((point1[0] - point2[0]) ** 2) + ((point1[1] - point2[1]) ** 2))
-	return distance
+	return sqrt(((point1[0] - point2[0]) ** 2) + ((point1[1] - point2[1]) ** 2))
 
 def find_box_coordinate(coor, box):
 	bx1 = box[2]
@@ -91,11 +112,6 @@ def find_box_coordinate(coor, box):
 	return (best_y, best_x)
 
 def actual_distance(point1, point2):
-	if point1[0] == point2[0]:
-		return abs(point1[1] - point2[1])
-	elif point1[1] == point2[1]:
-		return abs(point1[0] - point2[0])
-	else:
-		return sqrt(((point1[0] - point2[0]) ** 2) + ((point1[1] - point2[1]) ** 2))
+	return sqrt(((point1[0] - point2[0]) ** 2) + ((point1[1] - point2[1]) ** 2))
 
 		
