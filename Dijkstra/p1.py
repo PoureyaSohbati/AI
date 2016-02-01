@@ -29,7 +29,7 @@ def dijkstras_shortest_path(initial_position, destination, graph, adj):
     dist[initial_position] = 0
     heappush(queue, (dist[initial_position], initial_position))
 
-    while len(queue) != 0:
+    while queue:
         d, v = heappop(queue)
         
         if v == destination:
