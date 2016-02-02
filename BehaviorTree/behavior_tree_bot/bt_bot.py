@@ -55,7 +55,7 @@ def setup_behavior_tree():
     #spread_action = Action(send_to_closest_neutral)
     spread_sequence.child_nodes = [neutral_planet_check, have_enough, spread_action]
 
-    root.child_nodes = [grab_what_enemy_wants, spread_sequence, offensive_plan]
+    root.child_nodes = [grab_what_enemy_wants, offensive_plan, spread_sequence]
 
     logging.info('\n' + root.tree_to_string())
     return root
