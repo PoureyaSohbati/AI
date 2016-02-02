@@ -5,10 +5,11 @@ sys.path.insert(0, '../')
 from planet_wars import *
 
 growthRateIm = -1.0/4.0
-distIm = 2.0
+distIm = 3.0
 fleetIm = 2.0
 
 def attack_weakest_enemy_planet(state):
+
   
     # Find my strongest planet.
     strongest_planets = sorted(state.my_planets(), key=lambda p: p.num_ships)
@@ -27,11 +28,18 @@ def attack_weakest_enemy_planet(state):
             issue_order(state, strongest_planet.ID, weakest_planet.ID, strongest_planet.num_ships / 2)
             # Send half the ships from my strongest planet to the weakest enemy planet.
     """
-    for weakest_planet in weakest_planets:
-        for strongest_planet in strongest_planets:
-            if any(mFleet.source_planet == strongest_planet.ID and mFleet.destination_planet ==  weakest_planet.ID for mFleet in state.my_fleets()):
-                continue
-            
+    #for weakest_planet in weakest_planets:
+    weakest_planet = weakest_planets[0]
+    total_ship_sent = 0
+    num_turns = 0
+    for strongest_planet in strongest_planets:
+        if any(mFleet.source_planet == strongest_planet.ID and mFleet.destination_planet ==  weakest_planet.ID for mFleet in state.my_fleets()):
+            continue
+        temp_num_turns = state.distance(strongest_planet.ID, weakest_planet.ID)
+        if temp_num_turns > num_turns:
+            num_turns = temp_num_turns
+        total_ship_sent += strongest_planet.num_ships / 2
+        issue_order(state, strongest_planet.ID, weakest_planet.ID, strongest_planet.num_ships / 2 )
 
     return True
 
@@ -54,25 +62,52 @@ def spread_to_weakest_neutral_planet(state):
         # (4) Send half the ships from my strongest planet to the weakest enemy planet.
         return issue_order(state, strongest_planet.ID, weakest_planet.ID, strongest_planet.num_ships / 2)
 
-
+"""
 def spread_to_best_neutral(state):
-    strongest_planet = max(state.my_planets(), key=lambda p: p.num_ships, default=None)
+    strongest_planets = sorted(state.my_planets(), key=lambda p: p.num_ships)
 
-    best_neutral = min(state.neutral_planets(), key=lambda p: p.growth_rate * growthRateIm \
+    best_neutrals = sorted(state.neutral_planets(), key=lambda p: p.growth_rate * growthRateIm \
                         + state.distance(strongest_planet.ID, p.ID) * distIm \
-                        + p.num_ships * fleetIm, default=None)
+                        + p.num_ships * fleetIm)
 
 
-    if not strongest_planet or not best_neutral:
+    if not strongest_planets or not best_neutrals:
         return False
 
-    else:
+    for best_neutral in best_neutrals:
         if strongest_planet.num_ships < best_neutral.num_ships:
             return False
 
         #ship_amount = ceil((strongest_planet.num_ships - best_neutral.num_ships) * 2.0)
         ship_amount = best_neutral.num_ships + 2
         return issue_order(state, strongest_planet.ID, best_neutral.ID, ship_amount )
+"""
+
+def spread_to_best_neutral(state):
+    strongest_planets = sorted(state.my_planets(), key=lambda p: p.num_ships)
+
+    strongest_planet = strongest_planets[0]
+
+    best_neutrals = sorted(state.neutral_planets(), key=lambda p: p.growth_rate * growthRateIm \
+                        + state.distance(strongest_planet.ID, p.ID) * distIm \
+                        + p.num_ships * fleetIm)
+
+
+    if not strongest_planets or not best_neutrals:
+        return False
+
+    i = 0
+    for best_neutral in best_neutrals:
+        if i == 3:
+            return True
+            
+        if strongest_planet.num_ships < best_neutral.num_ships:
+            return False
+
+        ship_amount = best_neutral.num_ships + 2
+        issue_order(state, strongest_planet.ID, best_neutral.ID, ship_amount )
+        i += 1
+    return True
 
 
 def send_to_closest_neutral(state):
