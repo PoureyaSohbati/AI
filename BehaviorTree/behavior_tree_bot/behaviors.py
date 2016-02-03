@@ -8,7 +8,7 @@ growthRateIm = -1.0/4.0
 distIm = 3.0
 fleetIm = 2.0
 
-
+"""
 def attack_weakest_enemy_planet(state):
 
   
@@ -36,7 +36,7 @@ def attack_weakest_enemy_planet(state):
         issue_order(state, strongest_planet.ID, weakest_planet.ID, strongest_planet.num_ships / 2 )
 
     return True
-    
+
 """
 def attack_weakest_enemy_planet(state):
     my_planets = iter(sorted(state.my_planets(), key=lambda p: p.num_ships))
@@ -63,7 +63,7 @@ def attack_weakest_enemy_planet(state):
 
     except StopIteration:
         return
-"""
+
 
 def spread_to_weakest_neutral_planet(state):
     # (1) If we currently have a fleet in flight, just do nothing.
@@ -107,7 +107,10 @@ def spread_to_best_neutral(state):
 def spread_to_best_neutral(state):
     strongest_planets = sorted(state.my_planets(), key=lambda p: p.num_ships)
 
-    strongest_planet = strongest_planets[0]
+    if strongest_planets:
+        strongest_planet = strongest_planets[0]
+    else: 
+        return False
 
     best_neutrals = sorted(state.neutral_planets(), key=lambda p: p.growth_rate * growthRateIm \
                         + state.distance(strongest_planet.ID, p.ID) * distIm \
@@ -118,6 +121,10 @@ def spread_to_best_neutral(state):
         return False
 
     i = 0
+
+    if any(mFleet.source_planet == strongest_planet.ID for mFleet in state.my_fleets()):
+        return False 
+
     for best_neutral in best_neutrals:
         if i == 3:
             return True
@@ -265,6 +272,7 @@ def send_affensive_help(state):
 
 def if_a_good_neutral_available_now(state):
     limit = 15
+    lost_ships = 25
     min_turns = 1000
     best_planet = None
 
@@ -273,13 +281,18 @@ def if_a_good_neutral_available_now(state):
         # neutral planets
         for nPlanet in state.neutral_planets():
             # if going to that planet
+            if any(mFleet.destination_planet == nPlanet.ID for mFleet in state.my_fleets()):
+                continue 
             if eFleet.destination_planet == nPlanet.ID:
+                # if is worth it 
+                if eFleet.num_ships < lost_ships:
+                    continue
                 # if amount of ships left is less than 15
                 ships_alive = abs(eFleet.num_ships - nPlanet.num_ships)
                 if  ships_alive < limit:
                     # how long it takes to get to the other planet
-                    num_turns_enemy = state.distance(eFleet.source_planet, eFleet.destination_planet)
                     for planet in state.my_planets():
+                        num_turns_enemy = state.distance(planet.ID, eFleet.destination_planet)
                         # if my planet has enough ships
                         num_ships = state.distance(nPlanet.ID, planet.ID) + ships_alive
                         if planet.num_ships > limit+2:

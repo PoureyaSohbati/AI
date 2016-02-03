@@ -38,23 +38,25 @@ def setup_behavior_tree():
     largest_fleet_check = Check(have_largest_fleet)
     #largest_growth_rate_check = Check(have_largest_growth_rate)
     attack = Action(attack_weakest_enemy_planet)
-    offensive_plan.child_nodes = [largest_fleet_check, attack]
+    offensive_plan.child_nodes = [attack]
 
+    """
     send_three_to_neutral = Sequence(name='send 3 neutral')
     above_30 = Check(above_30_not_sending)
     send_one = Action(send_to_closest_neutral_if_backup)
     send_backup = Action(send_affensive_help)
     send_three_to_neutral.child_nodes = [above_30, send_one, send_backup, send_backup]
-    
+    """
 
     spread_sequence = Sequence(name='Spread Strategy')
     neutral_planet_check = Check(if_neutral_planet_available)
+    spread_selector = Selector(name='Spread Selector')
     enough = Check(if_dont_have_enough_neutral)
+    not_close_enough = Check(if_enemy_too_far)
+    spread_selector.child_nodes = [enough, not_close_enough]
     worth = Check(worth_attacking_neutral)
-    #spread_action = Action(spread_to_weakest_neutral_planet)
     spread_action = Action(spread_to_best_neutral)
-    #spread_action = Action(send_to_closest_neutral)
-    spread_sequence.child_nodes = [neutral_planet_check, enough, worth, spread_action]
+    spread_sequence.child_nodes = [neutral_planet_check, spread_selector, worth, spread_action]
 
     root.child_nodes = [grab_what_enemy_wants, spread_sequence, offensive_plan]
 

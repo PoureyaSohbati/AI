@@ -44,21 +44,19 @@ def if_dont_have_enough_neutral(state):
 	return len(state.my_planets()) < 4
 
 
-def better_enemy_exist(state):
-	# Find my strongest planet.
-    strongest_planets = sorted(state.my_planets(), key=lambda p: p.num_ships)
+def if_enemy_too_far(state):
+	closest = 1000
+	for mPlanet in state.my_planets():
+		temp_closest_planet = min(state.enemy_planets(), key=lambda p: state.distance(p.ID, mPlanet.ID), default=None)
+		if not temp_closest_planet:
+			return False
+		temp_closest = state.distance(temp_closest_planet.ID, mPlanet.ID)
+		if closest > temp_closest:
+			closest = temp_closest
+	return closest > 13
 
-    # Find the weakest enemy planet.
-    weakest_planets = sorted(state.enemy_planets(), key=lambda p: p.num_ships)
-    return True
 
 
 def worth_attacking_neutral(state):
-	"""
-	best_neutral = min(state.neutral_planets(), key=lambda p: p.num_ships)
-	if best_neutral.num_ships < 30:
-		return True
-	return False
-	"""
 	return min(state.neutral_planets(), key=lambda p: p.num_ships).num_ships < 30
 

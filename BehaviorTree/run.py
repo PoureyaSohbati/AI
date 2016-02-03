@@ -1,6 +1,6 @@
 import subprocess
 import os, sys
-
+from random import randint
 
 def show_match(bot, opponent_bot, map_num):
     """
@@ -54,16 +54,32 @@ def test(bot, opponent_bot, map):
 if __name__ == '__main__':
     path =  os.getcwd()
     
+    """
     opponents = ['opponent_bots/easy_bot.py',
                  'opponent_bots/spread_bot.py',
                  'opponent_bots/aggressive_bot.py',
                  'opponent_bots/defensive_bot.py',
                  'opponent_bots/production_bot.py']
-    
+    """
+
     #opponents = ['opponent_bots/defensive_bot.py']
 
-    maps = [71, 13, 24, 56, 7]
+    opponents = ['opponent_bots/spread_bot.py',
+                 'opponent_bots/spread_bot.py',
+                 'opponent_bots/spread_bot.py',
+                 'opponent_bots/spread_bot.py',
+                 'opponent_bots/spread_bot.py']
 
+    a = randint(1,99)
+    b = randint(1,99)
+    c = randint(1,99)
+    d = randint(1,99)
+    e = randint(1,99)
+    #maps = [71, 13, 24, 56, 7]
+    maps = [a, b, c, d, e]
+    #maps = [26, 26, 26, 26, 26]
+    print (a, b, c, d, e)
+    print("--------------------------")
     #maps = [56]
 
     my_bot = 'behavior_tree_bot/bt_bot.py'
