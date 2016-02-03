@@ -8,6 +8,7 @@ growthRateIm = -1.0/4.0
 distIm = 3.0
 fleetIm = 2.0
 
+
 def attack_weakest_enemy_planet(state):
 
   
@@ -20,14 +21,7 @@ def attack_weakest_enemy_planet(state):
     if not strongest_planets or not weakest_planets:
     # No legal source or destination
         return False
-    """
-    for weakest_planet in weakest_planets:
-        if any(mFleet.source_planet == strongest_planet.ID and mFleet.destination_planet ==  weakest_planet.ID for mFleet in state.my_fleets()):
-            continue
-        else:
-            issue_order(state, strongest_planet.ID, weakest_planet.ID, strongest_planet.num_ships / 2)
-            # Send half the ships from my strongest planet to the weakest enemy planet.
-    """
+
     #for weakest_planet in weakest_planets:
     weakest_planet = weakest_planets[0]
     total_ship_sent = 0
@@ -42,7 +36,34 @@ def attack_weakest_enemy_planet(state):
         issue_order(state, strongest_planet.ID, weakest_planet.ID, strongest_planet.num_ships / 2 )
 
     return True
+    
+"""
+def attack_weakest_enemy_planet(state):
+    my_planets = iter(sorted(state.my_planets(), key=lambda p: p.num_ships))
 
+    enemy_planets = [planet for planet in state.enemy_planets()
+                      if not any(fleet.destination_planet == planet.ID for fleet in state.my_fleets())]
+    enemy_planets.sort(key=lambda p: p.num_ships)
+
+    target_planets = iter(enemy_planets)
+
+    try:
+        my_planet = next(my_planets)
+        target_planet = next(target_planets)
+        while True:
+            required_ships = target_planet.num_ships + \
+                                 state.distance(my_planet.ID, target_planet.ID) * target_planet.growth_rate + 1
+
+            if my_planet.num_ships > required_ships:
+                issue_order(state, my_planet.ID, target_planet.ID, required_ships)
+                my_planet = next(my_planets)
+                target_planet = next(target_planets)
+            else:
+                my_planet = next(my_planets)
+
+    except StopIteration:
+        return
+"""
 
 def spread_to_weakest_neutral_planet(state):
     # (1) If we currently have a fleet in flight, just do nothing.
@@ -100,7 +121,7 @@ def spread_to_best_neutral(state):
     for best_neutral in best_neutrals:
         if i == 3:
             return True
-            
+
         if strongest_planet.num_ships < best_neutral.num_ships:
             return False
 
@@ -247,18 +268,6 @@ def if_a_good_neutral_available_now(state):
     min_turns = 1000
     best_planet = None
 
-    """
-    nPlanet = min(state.neutral_planets(), key=lambda p: p.num_ships)
-    if nPlanet.num_ships < limit:
-        #for nPlanet
-        return True
-    """
-    #print(state.enemy_fleets())
-    #if len(state.enemy_fleets()) > 0:
-        #print ("afdafdaf")
-    #if state.enemy_fleets():
-        #return True
-
     # enemy fleets
     for eFleet in state.enemy_fleets():
         # neutral planets
@@ -272,6 +281,7 @@ def if_a_good_neutral_available_now(state):
                     num_turns_enemy = state.distance(eFleet.source_planet, eFleet.destination_planet)
                     for planet in state.my_planets():
                         # if my planet has enough ships
+                        num_ships = state.distance(nPlanet.ID, planet.ID) + ships_alive
                         if planet.num_ships > limit+2:
                             #send from the closest planet
                             num_turns_mine = state.distance(planet.ID, eFleet.destination_planet) - num_turns_enemy
@@ -279,6 +289,6 @@ def if_a_good_neutral_available_now(state):
                                 min_turns = num_turns_mine
                                 best_planet = planet 
                     if best_planet:
-                        return issue_order(state, best_planet.ID, eFleet.destination_planet, limit+2)
+                        return issue_order(state, best_planet.ID, eFleet.destination_planet, num_ships+2)
     return False
 

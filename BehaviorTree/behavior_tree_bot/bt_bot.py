@@ -49,11 +49,12 @@ def setup_behavior_tree():
 
     spread_sequence = Sequence(name='Spread Strategy')
     neutral_planet_check = Check(if_neutral_planet_available)
-    have_enough = Check(if_dont_have_enough_neutral)
+    enough = Check(if_dont_have_enough_neutral)
+    worth = Check(worth_attacking_neutral)
     #spread_action = Action(spread_to_weakest_neutral_planet)
     spread_action = Action(spread_to_best_neutral)
     #spread_action = Action(send_to_closest_neutral)
-    spread_sequence.child_nodes = [neutral_planet_check, have_enough, spread_action]
+    spread_sequence.child_nodes = [neutral_planet_check, enough, worth, spread_action]
 
     root.child_nodes = [grab_what_enemy_wants, spread_sequence, offensive_plan]
 
