@@ -120,14 +120,48 @@ def search(graph, state, is_goal, limit, heuristic):
 
 def search(graph, state, is_goal, limit, heuristic):
     start_time = time()
+    queue = []
+    cost = {}
+    prev = {}
+    action = []
+
+"""
+    for vertex in graph['spaces']:
+        cost[vertex] = inf
+        prev[vertex] = None
+"""
+
+    cost[state] = 0
+    prev[state] = None
+    action[state] = None
+    heappush(queue, (cost[state], state, action[state]))
+
 
     # Search
     while time() - start_time < limit:
-        pass
+        d, v = heappop(queue)
+        
+        if v == destination:
+            while v != None:
+                path.append(v)
+                v = prev[v]
+            path.reverse()
+            return path
+                
+        neighbors = adj(graph, v)
+        for n, c in neighbors.items():
+            alt = cost[v] + c
+            if alt < cost[n]:
+                cost[n] = alt
+                prev[n] = v
+                if n not in queue:
+                    heappush(queue, (alt, n))
+     
 
     # Failed to find a path
     print("Failed to find a path from", state, 'within time limit.')
     return None
+
 
 if __name__ == '__main__':
     with open('Crafting.json') as f:
@@ -160,7 +194,7 @@ if __name__ == '__main__':
     state = State({key: 0 for key in Crafting['Items']})
     state.update(Crafting['Initial'])
 
-
+"""
     print ("Original State: ", state)
     newstate = state.copy();
     for i in all_recipes:
@@ -175,7 +209,7 @@ if __name__ == '__main__':
         print("goal satisfied")
     else:
         print("goal failed")
-
+"""
     # Search - This is you!
 
 
