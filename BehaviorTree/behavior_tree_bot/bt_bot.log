@@ -33,9 +33,9 @@ DEBUG:root:Result: Selector: Spread Selector -> Success
 DEBUG:root:Executing:Check: worth_attacking_neutral
 DEBUG:root:Result: Check: worth_attacking_neutral -> Success
 DEBUG:root:Executing:Action: spread_to_best_neutral
-DEBUG:root:Order:1 21 6.0
-DEBUG:root:Order:1 22 6.0
-DEBUG:root:Order:1 4 22.0
+DEBUG:root:Order:1 18 6.0
+DEBUG:root:Order:1 12 14.0
+DEBUG:root:Order:1 17 6.0
 DEBUG:root:Result: Action: spread_to_best_neutral -> Success
 DEBUG:root:Result: Sequence: Spread Strategy -> Success
 DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Success
@@ -172,67 +172,6 @@ DEBUG:root:Result: Selector: Spread Selector -> Success
 DEBUG:root:Executing:Check: worth_attacking_neutral
 DEBUG:root:Result: Check: worth_attacking_neutral -> Success
 DEBUG:root:Executing:Action: spread_to_best_neutral
-DEBUG:root:Bad order:4 4.0 6.0
-DEBUG:root:Bad order:4 4.0 6.0
-DEBUG:root:Result: Action: spread_to_best_neutral -> Failure
-DEBUG:root:Result: Sequence: Spread Strategy -> Failure
-DEBUG:root:Executing:Sequence: Offensive Strategy
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Result: Sequence: Offensive Strategy -> Failure
-DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: High Level Ordering of Strategies
-DEBUG:root:Executing:Sequence: Getting what enemy wants
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Executing:Check: if_a_good_neutral_available
-DEBUG:root:Result: Check: if_a_good_neutral_available -> Success
-DEBUG:root:Executing:Action: if_a_good_neutral_available_now
-DEBUG:root:Result: Action: if_a_good_neutral_available_now -> Failure
-DEBUG:root:Result: Sequence: Getting what enemy wants -> Failure
-DEBUG:root:Executing:Sequence: Spread Strategy
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Executing:Selector: Spread Selector
-DEBUG:root:Executing:Check: if_dont_have_enough_neutral
-DEBUG:root:Result: Check: if_dont_have_enough_neutral -> Success
-DEBUG:root:Result: Selector: Spread Selector -> Success
-DEBUG:root:Executing:Check: worth_attacking_neutral
-DEBUG:root:Result: Check: worth_attacking_neutral -> Success
-DEBUG:root:Executing:Action: spread_to_best_neutral
-DEBUG:root:Order:4 21 6.0
-DEBUG:root:Bad order:4 0.0 6.0
-DEBUG:root:Result: Action: spread_to_best_neutral -> Failure
-DEBUG:root:Result: Sequence: Spread Strategy -> Failure
-DEBUG:root:Executing:Sequence: Offensive Strategy
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Order:1 3 40.0
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Result: Sequence: Offensive Strategy -> Failure
-DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: High Level Ordering of Strategies
-DEBUG:root:Executing:Sequence: Getting what enemy wants
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Executing:Check: if_a_good_neutral_available
-DEBUG:root:Result: Check: if_a_good_neutral_available -> Success
-DEBUG:root:Executing:Action: if_a_good_neutral_available_now
-DEBUG:root:Result: Action: if_a_good_neutral_available_now -> Failure
-DEBUG:root:Result: Sequence: Getting what enemy wants -> Failure
-DEBUG:root:Executing:Sequence: Spread Strategy
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Executing:Selector: Spread Selector
-DEBUG:root:Executing:Check: if_dont_have_enough_neutral
-DEBUG:root:Result: Check: if_dont_have_enough_neutral -> Success
-DEBUG:root:Result: Selector: Spread Selector -> Success
-DEBUG:root:Executing:Check: worth_attacking_neutral
-DEBUG:root:Result: Check: worth_attacking_neutral -> Success
-DEBUG:root:Executing:Action: spread_to_best_neutral
 DEBUG:root:Result: Action: spread_to_best_neutral -> Failure
 DEBUG:root:Result: Sequence: Spread Strategy -> Failure
 DEBUG:root:Executing:Sequence: Offensive Strategy
@@ -265,63 +204,7 @@ DEBUG:root:Result: Action: spread_to_best_neutral -> Failure
 DEBUG:root:Result: Sequence: Spread Strategy -> Failure
 DEBUG:root:Executing:Sequence: Offensive Strategy
 DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Result: Sequence: Offensive Strategy -> Failure
-DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: High Level Ordering of Strategies
-DEBUG:root:Executing:Sequence: Getting what enemy wants
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Executing:Check: if_a_good_neutral_available
-DEBUG:root:Result: Check: if_a_good_neutral_available -> Success
-DEBUG:root:Executing:Action: if_a_good_neutral_available_now
-DEBUG:root:Result: Action: if_a_good_neutral_available_now -> Failure
-DEBUG:root:Result: Sequence: Getting what enemy wants -> Failure
-DEBUG:root:Executing:Sequence: Spread Strategy
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Executing:Selector: Spread Selector
-DEBUG:root:Executing:Check: if_dont_have_enough_neutral
-DEBUG:root:Result: Check: if_dont_have_enough_neutral -> Success
-DEBUG:root:Result: Selector: Spread Selector -> Success
-DEBUG:root:Executing:Check: worth_attacking_neutral
-DEBUG:root:Result: Check: worth_attacking_neutral -> Success
-DEBUG:root:Executing:Action: spread_to_best_neutral
-DEBUG:root:Result: Action: spread_to_best_neutral -> Failure
-DEBUG:root:Result: Sequence: Spread Strategy -> Failure
-DEBUG:root:Executing:Sequence: Offensive Strategy
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Result: Sequence: Offensive Strategy -> Failure
-DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: High Level Ordering of Strategies
-DEBUG:root:Executing:Sequence: Getting what enemy wants
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Executing:Check: if_a_good_neutral_available
-DEBUG:root:Result: Check: if_a_good_neutral_available -> Success
-DEBUG:root:Executing:Action: if_a_good_neutral_available_now
-DEBUG:root:Result: Action: if_a_good_neutral_available_now -> Failure
-DEBUG:root:Result: Sequence: Getting what enemy wants -> Failure
-DEBUG:root:Executing:Sequence: Spread Strategy
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Executing:Selector: Spread Selector
-DEBUG:root:Executing:Check: if_dont_have_enough_neutral
-DEBUG:root:Result: Check: if_dont_have_enough_neutral -> Success
-DEBUG:root:Result: Selector: Spread Selector -> Success
-DEBUG:root:Executing:Check: worth_attacking_neutral
-DEBUG:root:Result: Check: worth_attacking_neutral -> Success
-DEBUG:root:Executing:Action: spread_to_best_neutral
-DEBUG:root:Result: Action: spread_to_best_neutral -> Failure
-DEBUG:root:Result: Sequence: Spread Strategy -> Failure
-DEBUG:root:Executing:Sequence: Offensive Strategy
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Order:1 17 74.0
+DEBUG:root:Order:1 9 26.0
 DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
 DEBUG:root:Result: Sequence: Offensive Strategy -> Failure
 DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
@@ -490,178 +373,7 @@ DEBUG:root:Result: Action: spread_to_best_neutral -> Failure
 DEBUG:root:Result: Sequence: Spread Strategy -> Failure
 DEBUG:root:Executing:Sequence: Offensive Strategy
 DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Result: Sequence: Offensive Strategy -> Failure
-DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: High Level Ordering of Strategies
-DEBUG:root:Executing:Sequence: Getting what enemy wants
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Executing:Check: if_a_good_neutral_available
-DEBUG:root:Result: Check: if_a_good_neutral_available -> Success
-DEBUG:root:Executing:Action: if_a_good_neutral_available_now
-DEBUG:root:Result: Action: if_a_good_neutral_available_now -> Failure
-DEBUG:root:Result: Sequence: Getting what enemy wants -> Failure
-DEBUG:root:Executing:Sequence: Spread Strategy
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Executing:Selector: Spread Selector
-DEBUG:root:Executing:Check: if_dont_have_enough_neutral
-DEBUG:root:Result: Check: if_dont_have_enough_neutral -> Success
-DEBUG:root:Result: Selector: Spread Selector -> Success
-DEBUG:root:Executing:Check: worth_attacking_neutral
-DEBUG:root:Result: Check: worth_attacking_neutral -> Success
-DEBUG:root:Executing:Action: spread_to_best_neutral
-DEBUG:root:Result: Action: spread_to_best_neutral -> Failure
-DEBUG:root:Result: Sequence: Spread Strategy -> Failure
-DEBUG:root:Executing:Sequence: Offensive Strategy
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Result: Sequence: Offensive Strategy -> Failure
-DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: High Level Ordering of Strategies
-DEBUG:root:Executing:Sequence: Getting what enemy wants
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Executing:Check: if_a_good_neutral_available
-DEBUG:root:Result: Check: if_a_good_neutral_available -> Success
-DEBUG:root:Executing:Action: if_a_good_neutral_available_now
-DEBUG:root:Result: Action: if_a_good_neutral_available_now -> Failure
-DEBUG:root:Result: Sequence: Getting what enemy wants -> Failure
-DEBUG:root:Executing:Sequence: Spread Strategy
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Executing:Selector: Spread Selector
-DEBUG:root:Executing:Check: if_dont_have_enough_neutral
-DEBUG:root:Result: Check: if_dont_have_enough_neutral -> Success
-DEBUG:root:Result: Selector: Spread Selector -> Success
-DEBUG:root:Executing:Check: worth_attacking_neutral
-DEBUG:root:Result: Check: worth_attacking_neutral -> Success
-DEBUG:root:Executing:Action: spread_to_best_neutral
-DEBUG:root:Bad order:4 24.0 26.0
-DEBUG:root:Order:4 6 22.0
-DEBUG:root:Result: Action: spread_to_best_neutral -> Failure
-DEBUG:root:Result: Sequence: Spread Strategy -> Failure
-DEBUG:root:Executing:Sequence: Offensive Strategy
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Result: Sequence: Offensive Strategy -> Failure
-DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: High Level Ordering of Strategies
-DEBUG:root:Executing:Sequence: Getting what enemy wants
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Executing:Check: if_a_good_neutral_available
-DEBUG:root:Result: Check: if_a_good_neutral_available -> Success
-DEBUG:root:Executing:Action: if_a_good_neutral_available_now
-DEBUG:root:Result: Action: if_a_good_neutral_available_now -> Failure
-DEBUG:root:Result: Sequence: Getting what enemy wants -> Failure
-DEBUG:root:Executing:Sequence: Spread Strategy
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Executing:Selector: Spread Selector
-DEBUG:root:Executing:Check: if_dont_have_enough_neutral
-DEBUG:root:Result: Check: if_dont_have_enough_neutral -> Success
-DEBUG:root:Result: Selector: Spread Selector -> Success
-DEBUG:root:Executing:Check: worth_attacking_neutral
-DEBUG:root:Result: Check: worth_attacking_neutral -> Success
-DEBUG:root:Executing:Action: spread_to_best_neutral
-DEBUG:root:Result: Action: spread_to_best_neutral -> Failure
-DEBUG:root:Result: Sequence: Spread Strategy -> Failure
-DEBUG:root:Executing:Sequence: Offensive Strategy
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Order:21 14 35.0
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Result: Sequence: Offensive Strategy -> Failure
-DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: High Level Ordering of Strategies
-DEBUG:root:Executing:Sequence: Getting what enemy wants
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Executing:Check: if_a_good_neutral_available
-DEBUG:root:Result: Check: if_a_good_neutral_available -> Success
-DEBUG:root:Executing:Action: if_a_good_neutral_available_now
-DEBUG:root:Result: Action: if_a_good_neutral_available_now -> Failure
-DEBUG:root:Result: Sequence: Getting what enemy wants -> Failure
-DEBUG:root:Executing:Sequence: Spread Strategy
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Executing:Selector: Spread Selector
-DEBUG:root:Executing:Check: if_dont_have_enough_neutral
-DEBUG:root:Result: Check: if_dont_have_enough_neutral -> Success
-DEBUG:root:Result: Selector: Spread Selector -> Success
-DEBUG:root:Executing:Check: worth_attacking_neutral
-DEBUG:root:Result: Check: worth_attacking_neutral -> Success
-DEBUG:root:Executing:Action: spread_to_best_neutral
-DEBUG:root:Result: Action: spread_to_best_neutral -> Failure
-DEBUG:root:Result: Sequence: Spread Strategy -> Failure
-DEBUG:root:Executing:Sequence: Offensive Strategy
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Result: Sequence: Offensive Strategy -> Failure
-DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: High Level Ordering of Strategies
-DEBUG:root:Executing:Sequence: Getting what enemy wants
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Executing:Check: if_a_good_neutral_available
-DEBUG:root:Result: Check: if_a_good_neutral_available -> Success
-DEBUG:root:Executing:Action: if_a_good_neutral_available_now
-DEBUG:root:Result: Action: if_a_good_neutral_available_now -> Failure
-DEBUG:root:Result: Sequence: Getting what enemy wants -> Failure
-DEBUG:root:Executing:Sequence: Spread Strategy
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Executing:Selector: Spread Selector
-DEBUG:root:Executing:Check: if_dont_have_enough_neutral
-DEBUG:root:Result: Check: if_dont_have_enough_neutral -> Success
-DEBUG:root:Result: Selector: Spread Selector -> Success
-DEBUG:root:Executing:Check: worth_attacking_neutral
-DEBUG:root:Result: Check: worth_attacking_neutral -> Success
-DEBUG:root:Executing:Action: spread_to_best_neutral
-DEBUG:root:Result: Action: spread_to_best_neutral -> Failure
-DEBUG:root:Result: Sequence: Spread Strategy -> Failure
-DEBUG:root:Executing:Sequence: Offensive Strategy
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Result: Sequence: Offensive Strategy -> Failure
-DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: High Level Ordering of Strategies
-DEBUG:root:Executing:Sequence: Getting what enemy wants
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Executing:Check: if_a_good_neutral_available
-DEBUG:root:Result: Check: if_a_good_neutral_available -> Success
-DEBUG:root:Executing:Action: if_a_good_neutral_available_now
-DEBUG:root:Result: Action: if_a_good_neutral_available_now -> Failure
-DEBUG:root:Result: Sequence: Getting what enemy wants -> Failure
-DEBUG:root:Executing:Sequence: Spread Strategy
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Executing:Selector: Spread Selector
-DEBUG:root:Executing:Check: if_dont_have_enough_neutral
-DEBUG:root:Result: Check: if_dont_have_enough_neutral -> Success
-DEBUG:root:Result: Selector: Spread Selector -> Success
-DEBUG:root:Executing:Check: worth_attacking_neutral
-DEBUG:root:Result: Check: worth_attacking_neutral -> Success
-DEBUG:root:Executing:Action: spread_to_best_neutral
-DEBUG:root:Result: Action: spread_to_best_neutral -> Failure
-DEBUG:root:Result: Sequence: Spread Strategy -> Failure
-DEBUG:root:Executing:Sequence: Offensive Strategy
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Order:1 4 20.0
+DEBUG:root:Order:1 11 67.0
 DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
 DEBUG:root:Result: Sequence: Offensive Strategy -> Failure
 DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
@@ -765,10 +477,102 @@ DEBUG:root:Executing:Check: if_neutral_planet_available
 DEBUG:root:Result: Check: if_neutral_planet_available -> Success
 DEBUG:root:Executing:Selector: Spread Selector
 DEBUG:root:Executing:Check: if_dont_have_enough_neutral
-DEBUG:root:Result: Check: if_dont_have_enough_neutral -> Failure
-DEBUG:root:Executing:Check: if_enemy_too_far
-DEBUG:root:Result: Check: if_enemy_too_far -> Failure
-DEBUG:root:Result: Selector: Spread Selector -> Failure
+DEBUG:root:Result: Check: if_dont_have_enough_neutral -> Success
+DEBUG:root:Result: Selector: Spread Selector -> Success
+DEBUG:root:Executing:Check: worth_attacking_neutral
+DEBUG:root:Result: Check: worth_attacking_neutral -> Success
+DEBUG:root:Executing:Action: spread_to_best_neutral
+DEBUG:root:Result: Action: spread_to_best_neutral -> Failure
+DEBUG:root:Result: Sequence: Spread Strategy -> Failure
+DEBUG:root:Executing:Sequence: Offensive Strategy
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet
+DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
+DEBUG:root:Result: Sequence: Offensive Strategy -> Failure
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Getting what enemy wants
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Check: if_a_good_neutral_available
+DEBUG:root:Result: Check: if_a_good_neutral_available -> Success
+DEBUG:root:Executing:Action: if_a_good_neutral_available_now
+DEBUG:root:Result: Action: if_a_good_neutral_available_now -> Failure
+DEBUG:root:Result: Sequence: Getting what enemy wants -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Selector: Spread Selector
+DEBUG:root:Executing:Check: if_dont_have_enough_neutral
+DEBUG:root:Result: Check: if_dont_have_enough_neutral -> Success
+DEBUG:root:Result: Selector: Spread Selector -> Success
+DEBUG:root:Executing:Check: worth_attacking_neutral
+DEBUG:root:Result: Check: worth_attacking_neutral -> Success
+DEBUG:root:Executing:Action: spread_to_best_neutral
+DEBUG:root:Bad order:18 22.0 24.0
+DEBUG:root:Bad order:18 22.0 24.0
+DEBUG:root:Result: Action: spread_to_best_neutral -> Failure
+DEBUG:root:Result: Sequence: Spread Strategy -> Failure
+DEBUG:root:Executing:Sequence: Offensive Strategy
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet
+DEBUG:root:Order:12 17 26.0
+DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
+DEBUG:root:Result: Sequence: Offensive Strategy -> Failure
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Getting what enemy wants
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Check: if_a_good_neutral_available
+DEBUG:root:Result: Check: if_a_good_neutral_available -> Success
+DEBUG:root:Executing:Action: if_a_good_neutral_available_now
+DEBUG:root:Result: Action: if_a_good_neutral_available_now -> Failure
+DEBUG:root:Result: Sequence: Getting what enemy wants -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Selector: Spread Selector
+DEBUG:root:Executing:Check: if_dont_have_enough_neutral
+DEBUG:root:Result: Check: if_dont_have_enough_neutral -> Success
+DEBUG:root:Result: Selector: Spread Selector -> Success
+DEBUG:root:Executing:Check: worth_attacking_neutral
+DEBUG:root:Result: Check: worth_attacking_neutral -> Success
+DEBUG:root:Executing:Action: spread_to_best_neutral
+DEBUG:root:Order:18 6 24.0
+DEBUG:root:Bad order:18 0.0 24.0
+DEBUG:root:Result: Action: spread_to_best_neutral -> Failure
+DEBUG:root:Result: Sequence: Spread Strategy -> Failure
+DEBUG:root:Executing:Sequence: Offensive Strategy
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet
+DEBUG:root:Order:1 12 58.0
+DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
+DEBUG:root:Result: Sequence: Offensive Strategy -> Failure
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Getting what enemy wants
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Check: if_a_good_neutral_available
+DEBUG:root:Result: Check: if_a_good_neutral_available -> Success
+DEBUG:root:Executing:Action: if_a_good_neutral_available_now
+DEBUG:root:Result: Action: if_a_good_neutral_available_now -> Failure
+DEBUG:root:Result: Sequence: Getting what enemy wants -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Selector: Spread Selector
+DEBUG:root:Executing:Check: if_dont_have_enough_neutral
+DEBUG:root:Result: Check: if_dont_have_enough_neutral -> Success
+DEBUG:root:Result: Selector: Spread Selector -> Success
+DEBUG:root:Executing:Check: worth_attacking_neutral
+DEBUG:root:Result: Check: worth_attacking_neutral -> Success
+DEBUG:root:Executing:Action: spread_to_best_neutral
+DEBUG:root:Result: Action: spread_to_best_neutral -> Failure
 DEBUG:root:Result: Sequence: Spread Strategy -> Failure
 DEBUG:root:Executing:Sequence: Offensive Strategy
 DEBUG:root:Executing:Action: attack_weakest_enemy_planet
@@ -800,7 +604,6 @@ DEBUG:root:Result: Action: spread_to_best_neutral -> Failure
 DEBUG:root:Result: Sequence: Spread Strategy -> Failure
 DEBUG:root:Executing:Sequence: Offensive Strategy
 DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Order:1 3 40.0
 DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
 DEBUG:root:Result: Sequence: Offensive Strategy -> Failure
 DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
@@ -829,7 +632,7 @@ DEBUG:root:Result: Action: spread_to_best_neutral -> Failure
 DEBUG:root:Result: Sequence: Spread Strategy -> Failure
 DEBUG:root:Executing:Sequence: Offensive Strategy
 DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Order:1 18 22.0
+DEBUG:root:Order:1 5 26.0
 DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
 DEBUG:root:Result: Sequence: Offensive Strategy -> Failure
 DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
@@ -877,14 +680,15 @@ DEBUG:root:Executing:Check: if_neutral_planet_available
 DEBUG:root:Result: Check: if_neutral_planet_available -> Success
 DEBUG:root:Executing:Selector: Spread Selector
 DEBUG:root:Executing:Check: if_dont_have_enough_neutral
-DEBUG:root:Result: Check: if_dont_have_enough_neutral -> Failure
-DEBUG:root:Executing:Check: if_enemy_too_far
-DEBUG:root:Result: Check: if_enemy_too_far -> Failure
-DEBUG:root:Result: Selector: Spread Selector -> Failure
+DEBUG:root:Result: Check: if_dont_have_enough_neutral -> Success
+DEBUG:root:Result: Selector: Spread Selector -> Success
+DEBUG:root:Executing:Check: worth_attacking_neutral
+DEBUG:root:Result: Check: worth_attacking_neutral -> Success
+DEBUG:root:Executing:Action: spread_to_best_neutral
+DEBUG:root:Result: Action: spread_to_best_neutral -> Failure
 DEBUG:root:Result: Sequence: Spread Strategy -> Failure
 DEBUG:root:Executing:Sequence: Offensive Strategy
 DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Order:17 11 20.0
 DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
 DEBUG:root:Result: Sequence: Offensive Strategy -> Failure
 DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
@@ -904,10 +708,126 @@ DEBUG:root:Executing:Check: if_neutral_planet_available
 DEBUG:root:Result: Check: if_neutral_planet_available -> Success
 DEBUG:root:Executing:Selector: Spread Selector
 DEBUG:root:Executing:Check: if_dont_have_enough_neutral
-DEBUG:root:Result: Check: if_dont_have_enough_neutral -> Failure
-DEBUG:root:Executing:Check: if_enemy_too_far
-DEBUG:root:Result: Check: if_enemy_too_far -> Failure
-DEBUG:root:Result: Selector: Spread Selector -> Failure
+DEBUG:root:Result: Check: if_dont_have_enough_neutral -> Success
+DEBUG:root:Result: Selector: Spread Selector -> Success
+DEBUG:root:Executing:Check: worth_attacking_neutral
+DEBUG:root:Result: Check: worth_attacking_neutral -> Success
+DEBUG:root:Executing:Action: spread_to_best_neutral
+DEBUG:root:Result: Action: spread_to_best_neutral -> Failure
+DEBUG:root:Result: Sequence: Spread Strategy -> Failure
+DEBUG:root:Executing:Sequence: Offensive Strategy
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet
+DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
+DEBUG:root:Result: Sequence: Offensive Strategy -> Failure
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Getting what enemy wants
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Check: if_a_good_neutral_available
+DEBUG:root:Result: Check: if_a_good_neutral_available -> Success
+DEBUG:root:Executing:Action: if_a_good_neutral_available_now
+DEBUG:root:Result: Action: if_a_good_neutral_available_now -> Failure
+DEBUG:root:Result: Sequence: Getting what enemy wants -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Selector: Spread Selector
+DEBUG:root:Executing:Check: if_dont_have_enough_neutral
+DEBUG:root:Result: Check: if_dont_have_enough_neutral -> Success
+DEBUG:root:Result: Selector: Spread Selector -> Success
+DEBUG:root:Executing:Check: worth_attacking_neutral
+DEBUG:root:Result: Check: worth_attacking_neutral -> Success
+DEBUG:root:Executing:Action: spread_to_best_neutral
+DEBUG:root:Result: Action: spread_to_best_neutral -> Failure
+DEBUG:root:Result: Sequence: Spread Strategy -> Failure
+DEBUG:root:Executing:Sequence: Offensive Strategy
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet
+DEBUG:root:Order:11 0 17.0
+DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
+DEBUG:root:Result: Sequence: Offensive Strategy -> Failure
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Getting what enemy wants
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Check: if_a_good_neutral_available
+DEBUG:root:Result: Check: if_a_good_neutral_available -> Success
+DEBUG:root:Executing:Action: if_a_good_neutral_available_now
+DEBUG:root:Result: Action: if_a_good_neutral_available_now -> Failure
+DEBUG:root:Result: Sequence: Getting what enemy wants -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Selector: Spread Selector
+DEBUG:root:Executing:Check: if_dont_have_enough_neutral
+DEBUG:root:Result: Check: if_dont_have_enough_neutral -> Success
+DEBUG:root:Result: Selector: Spread Selector -> Success
+DEBUG:root:Executing:Check: worth_attacking_neutral
+DEBUG:root:Result: Check: worth_attacking_neutral -> Success
+DEBUG:root:Executing:Action: spread_to_best_neutral
+DEBUG:root:Result: Action: spread_to_best_neutral -> Failure
+DEBUG:root:Result: Sequence: Spread Strategy -> Failure
+DEBUG:root:Executing:Sequence: Offensive Strategy
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet
+DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
+DEBUG:root:Result: Sequence: Offensive Strategy -> Failure
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Getting what enemy wants
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Check: if_a_good_neutral_available
+DEBUG:root:Result: Check: if_a_good_neutral_available -> Success
+DEBUG:root:Executing:Action: if_a_good_neutral_available_now
+DEBUG:root:Result: Action: if_a_good_neutral_available_now -> Failure
+DEBUG:root:Result: Sequence: Getting what enemy wants -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Selector: Spread Selector
+DEBUG:root:Executing:Check: if_dont_have_enough_neutral
+DEBUG:root:Result: Check: if_dont_have_enough_neutral -> Success
+DEBUG:root:Result: Selector: Spread Selector -> Success
+DEBUG:root:Executing:Check: worth_attacking_neutral
+DEBUG:root:Result: Check: worth_attacking_neutral -> Success
+DEBUG:root:Executing:Action: spread_to_best_neutral
+DEBUG:root:Result: Action: spread_to_best_neutral -> Failure
+DEBUG:root:Result: Sequence: Spread Strategy -> Failure
+DEBUG:root:Executing:Sequence: Offensive Strategy
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet
+DEBUG:root:Order:1 18 30.0
+DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
+DEBUG:root:Result: Sequence: Offensive Strategy -> Failure
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Getting what enemy wants
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Check: if_a_good_neutral_available
+DEBUG:root:Result: Check: if_a_good_neutral_available -> Success
+DEBUG:root:Executing:Action: if_a_good_neutral_available_now
+DEBUG:root:Result: Action: if_a_good_neutral_available_now -> Failure
+DEBUG:root:Result: Sequence: Getting what enemy wants -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Selector: Spread Selector
+DEBUG:root:Executing:Check: if_dont_have_enough_neutral
+DEBUG:root:Result: Check: if_dont_have_enough_neutral -> Success
+DEBUG:root:Result: Selector: Spread Selector -> Success
+DEBUG:root:Executing:Check: worth_attacking_neutral
+DEBUG:root:Result: Check: worth_attacking_neutral -> Success
+DEBUG:root:Executing:Action: spread_to_best_neutral
+DEBUG:root:Result: Action: spread_to_best_neutral -> Failure
 DEBUG:root:Result: Sequence: Spread Strategy -> Failure
 DEBUG:root:Executing:Sequence: Offensive Strategy
 DEBUG:root:Executing:Action: attack_weakest_enemy_planet
@@ -989,114 +909,7 @@ DEBUG:root:Result: Selector: Spread Selector -> Failure
 DEBUG:root:Result: Sequence: Spread Strategy -> Failure
 DEBUG:root:Executing:Sequence: Offensive Strategy
 DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Order:1 13 26.0
-DEBUG:root:Order:17 14 20.0
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Result: Sequence: Offensive Strategy -> Failure
-DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: High Level Ordering of Strategies
-DEBUG:root:Executing:Sequence: Getting what enemy wants
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Executing:Check: if_a_good_neutral_available
-DEBUG:root:Result: Check: if_a_good_neutral_available -> Success
-DEBUG:root:Executing:Action: if_a_good_neutral_available_now
-DEBUG:root:Result: Action: if_a_good_neutral_available_now -> Failure
-DEBUG:root:Result: Sequence: Getting what enemy wants -> Failure
-DEBUG:root:Executing:Sequence: Spread Strategy
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Executing:Selector: Spread Selector
-DEBUG:root:Executing:Check: if_dont_have_enough_neutral
-DEBUG:root:Result: Check: if_dont_have_enough_neutral -> Success
-DEBUG:root:Result: Selector: Spread Selector -> Success
-DEBUG:root:Executing:Check: worth_attacking_neutral
-DEBUG:root:Result: Check: worth_attacking_neutral -> Failure
-DEBUG:root:Result: Sequence: Spread Strategy -> Failure
-DEBUG:root:Executing:Sequence: Offensive Strategy
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Order:18 4 6.0
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Result: Sequence: Offensive Strategy -> Failure
-DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: High Level Ordering of Strategies
-DEBUG:root:Executing:Sequence: Getting what enemy wants
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Executing:Check: if_a_good_neutral_available
-DEBUG:root:Result: Check: if_a_good_neutral_available -> Success
-DEBUG:root:Executing:Action: if_a_good_neutral_available_now
-DEBUG:root:Result: Action: if_a_good_neutral_available_now -> Failure
-DEBUG:root:Result: Sequence: Getting what enemy wants -> Failure
-DEBUG:root:Executing:Sequence: Spread Strategy
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Executing:Selector: Spread Selector
-DEBUG:root:Executing:Check: if_dont_have_enough_neutral
-DEBUG:root:Result: Check: if_dont_have_enough_neutral -> Success
-DEBUG:root:Result: Selector: Spread Selector -> Success
-DEBUG:root:Executing:Check: worth_attacking_neutral
-DEBUG:root:Result: Check: worth_attacking_neutral -> Failure
-DEBUG:root:Result: Sequence: Spread Strategy -> Failure
-DEBUG:root:Executing:Sequence: Offensive Strategy
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Result: Sequence: Offensive Strategy -> Failure
-DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: High Level Ordering of Strategies
-DEBUG:root:Executing:Sequence: Getting what enemy wants
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Executing:Check: if_a_good_neutral_available
-DEBUG:root:Result: Check: if_a_good_neutral_available -> Success
-DEBUG:root:Executing:Action: if_a_good_neutral_available_now
-DEBUG:root:Result: Action: if_a_good_neutral_available_now -> Failure
-DEBUG:root:Result: Sequence: Getting what enemy wants -> Failure
-DEBUG:root:Executing:Sequence: Spread Strategy
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Executing:Selector: Spread Selector
-DEBUG:root:Executing:Check: if_dont_have_enough_neutral
-DEBUG:root:Result: Check: if_dont_have_enough_neutral -> Failure
-DEBUG:root:Executing:Check: if_enemy_too_far
-DEBUG:root:Result: Check: if_enemy_too_far -> Failure
-DEBUG:root:Result: Selector: Spread Selector -> Failure
-DEBUG:root:Result: Sequence: Spread Strategy -> Failure
-DEBUG:root:Executing:Sequence: Offensive Strategy
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Result: Sequence: Offensive Strategy -> Failure
-DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: High Level Ordering of Strategies
-DEBUG:root:Executing:Sequence: Getting what enemy wants
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Executing:Check: if_a_good_neutral_available
-DEBUG:root:Result: Check: if_a_good_neutral_available -> Success
-DEBUG:root:Executing:Action: if_a_good_neutral_available_now
-DEBUG:root:Result: Action: if_a_good_neutral_available_now -> Failure
-DEBUG:root:Result: Sequence: Getting what enemy wants -> Failure
-DEBUG:root:Executing:Sequence: Spread Strategy
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Executing:Selector: Spread Selector
-DEBUG:root:Executing:Check: if_dont_have_enough_neutral
-DEBUG:root:Result: Check: if_dont_have_enough_neutral -> Success
-DEBUG:root:Result: Selector: Spread Selector -> Success
-DEBUG:root:Executing:Check: worth_attacking_neutral
-DEBUG:root:Result: Check: worth_attacking_neutral -> Failure
-DEBUG:root:Result: Sequence: Spread Strategy -> Failure
-DEBUG:root:Executing:Sequence: Offensive Strategy
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Order:1 18 24.0
+DEBUG:root:Order:11 17 20.0
 DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
 DEBUG:root:Result: Sequence: Offensive Strategy -> Failure
 DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
@@ -1175,7 +988,6 @@ DEBUG:root:Result: Selector: Spread Selector -> Failure
 DEBUG:root:Result: Sequence: Spread Strategy -> Failure
 DEBUG:root:Executing:Sequence: Offensive Strategy
 DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Order:17 9 38.0
 DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
 DEBUG:root:Result: Sequence: Offensive Strategy -> Failure
 DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
@@ -1228,8 +1040,33 @@ DEBUG:root:Result: Selector: Spread Selector -> Failure
 DEBUG:root:Result: Sequence: Spread Strategy -> Failure
 DEBUG:root:Executing:Sequence: Offensive Strategy
 DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Order:17 10 23.0
-DEBUG:root:Order:1 15 26.0
+DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
+DEBUG:root:Result: Sequence: Offensive Strategy -> Failure
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Getting what enemy wants
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Check: if_a_good_neutral_available
+DEBUG:root:Result: Check: if_a_good_neutral_available -> Success
+DEBUG:root:Executing:Action: if_a_good_neutral_available_now
+DEBUG:root:Result: Action: if_a_good_neutral_available_now -> Failure
+DEBUG:root:Result: Sequence: Getting what enemy wants -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Selector: Spread Selector
+DEBUG:root:Executing:Check: if_dont_have_enough_neutral
+DEBUG:root:Result: Check: if_dont_have_enough_neutral -> Failure
+DEBUG:root:Executing:Check: if_enemy_too_far
+DEBUG:root:Result: Check: if_enemy_too_far -> Failure
+DEBUG:root:Result: Selector: Spread Selector -> Failure
+DEBUG:root:Result: Sequence: Spread Strategy -> Failure
+DEBUG:root:Executing:Sequence: Offensive Strategy
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet
+DEBUG:root:Order:12 6 29.0
 DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
 DEBUG:root:Result: Sequence: Offensive Strategy -> Failure
 DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
@@ -1282,7 +1119,6 @@ DEBUG:root:Result: Selector: Spread Selector -> Failure
 DEBUG:root:Result: Sequence: Spread Strategy -> Failure
 DEBUG:root:Executing:Sequence: Offensive Strategy
 DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Order:18 4 6.0
 DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
 DEBUG:root:Result: Sequence: Offensive Strategy -> Failure
 DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
@@ -1302,37 +1138,10 @@ DEBUG:root:Executing:Check: if_neutral_planet_available
 DEBUG:root:Result: Check: if_neutral_planet_available -> Success
 DEBUG:root:Executing:Selector: Spread Selector
 DEBUG:root:Executing:Check: if_dont_have_enough_neutral
-DEBUG:root:Result: Check: if_dont_have_enough_neutral -> Success
-DEBUG:root:Result: Selector: Spread Selector -> Success
-DEBUG:root:Executing:Check: worth_attacking_neutral
-DEBUG:root:Result: Check: worth_attacking_neutral -> Failure
-DEBUG:root:Result: Sequence: Spread Strategy -> Failure
-DEBUG:root:Executing:Sequence: Offensive Strategy
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Order:3 11 16.0
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Result: Sequence: Offensive Strategy -> Failure
-DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: High Level Ordering of Strategies
-DEBUG:root:Executing:Sequence: Getting what enemy wants
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Executing:Check: if_a_good_neutral_available
-DEBUG:root:Result: Check: if_a_good_neutral_available -> Success
-DEBUG:root:Executing:Action: if_a_good_neutral_available_now
-DEBUG:root:Result: Action: if_a_good_neutral_available_now -> Failure
-DEBUG:root:Result: Sequence: Getting what enemy wants -> Failure
-DEBUG:root:Executing:Sequence: Spread Strategy
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Executing:Selector: Spread Selector
-DEBUG:root:Executing:Check: if_dont_have_enough_neutral
-DEBUG:root:Result: Check: if_dont_have_enough_neutral -> Success
-DEBUG:root:Result: Selector: Spread Selector -> Success
-DEBUG:root:Executing:Check: worth_attacking_neutral
-DEBUG:root:Result: Check: worth_attacking_neutral -> Failure
+DEBUG:root:Result: Check: if_dont_have_enough_neutral -> Failure
+DEBUG:root:Executing:Check: if_enemy_too_far
+DEBUG:root:Result: Check: if_enemy_too_far -> Failure
+DEBUG:root:Result: Selector: Spread Selector -> Failure
 DEBUG:root:Result: Sequence: Spread Strategy -> Failure
 DEBUG:root:Executing:Sequence: Offensive Strategy
 DEBUG:root:Executing:Action: attack_weakest_enemy_planet
@@ -1355,13 +1164,14 @@ DEBUG:root:Executing:Check: if_neutral_planet_available
 DEBUG:root:Result: Check: if_neutral_planet_available -> Success
 DEBUG:root:Executing:Selector: Spread Selector
 DEBUG:root:Executing:Check: if_dont_have_enough_neutral
-DEBUG:root:Result: Check: if_dont_have_enough_neutral -> Success
-DEBUG:root:Result: Selector: Spread Selector -> Success
-DEBUG:root:Executing:Check: worth_attacking_neutral
-DEBUG:root:Result: Check: worth_attacking_neutral -> Failure
+DEBUG:root:Result: Check: if_dont_have_enough_neutral -> Failure
+DEBUG:root:Executing:Check: if_enemy_too_far
+DEBUG:root:Result: Check: if_enemy_too_far -> Failure
+DEBUG:root:Result: Selector: Spread Selector -> Failure
 DEBUG:root:Result: Sequence: Spread Strategy -> Failure
 DEBUG:root:Executing:Sequence: Offensive Strategy
 DEBUG:root:Executing:Action: attack_weakest_enemy_planet
+DEBUG:root:Order:11 2 62.0
 DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
 DEBUG:root:Result: Sequence: Offensive Strategy -> Failure
 DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
@@ -1381,89 +1191,10 @@ DEBUG:root:Executing:Check: if_neutral_planet_available
 DEBUG:root:Result: Check: if_neutral_planet_available -> Success
 DEBUG:root:Executing:Selector: Spread Selector
 DEBUG:root:Executing:Check: if_dont_have_enough_neutral
-DEBUG:root:Result: Check: if_dont_have_enough_neutral -> Success
-DEBUG:root:Result: Selector: Spread Selector -> Success
-DEBUG:root:Executing:Check: worth_attacking_neutral
-DEBUG:root:Result: Check: worth_attacking_neutral -> Failure
-DEBUG:root:Result: Sequence: Spread Strategy -> Failure
-DEBUG:root:Executing:Sequence: Offensive Strategy
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Result: Sequence: Offensive Strategy -> Failure
-DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: High Level Ordering of Strategies
-DEBUG:root:Executing:Sequence: Getting what enemy wants
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Executing:Check: if_a_good_neutral_available
-DEBUG:root:Result: Check: if_a_good_neutral_available -> Success
-DEBUG:root:Executing:Action: if_a_good_neutral_available_now
-DEBUG:root:Result: Action: if_a_good_neutral_available_now -> Failure
-DEBUG:root:Result: Sequence: Getting what enemy wants -> Failure
-DEBUG:root:Executing:Sequence: Spread Strategy
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Executing:Selector: Spread Selector
-DEBUG:root:Executing:Check: if_dont_have_enough_neutral
-DEBUG:root:Result: Check: if_dont_have_enough_neutral -> Success
-DEBUG:root:Result: Selector: Spread Selector -> Success
-DEBUG:root:Executing:Check: worth_attacking_neutral
-DEBUG:root:Result: Check: worth_attacking_neutral -> Failure
-DEBUG:root:Result: Sequence: Spread Strategy -> Failure
-DEBUG:root:Executing:Sequence: Offensive Strategy
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Result: Sequence: Offensive Strategy -> Failure
-DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: High Level Ordering of Strategies
-DEBUG:root:Executing:Sequence: Getting what enemy wants
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Executing:Check: if_a_good_neutral_available
-DEBUG:root:Result: Check: if_a_good_neutral_available -> Success
-DEBUG:root:Executing:Action: if_a_good_neutral_available_now
-DEBUG:root:Result: Action: if_a_good_neutral_available_now -> Failure
-DEBUG:root:Result: Sequence: Getting what enemy wants -> Failure
-DEBUG:root:Executing:Sequence: Spread Strategy
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Executing:Selector: Spread Selector
-DEBUG:root:Executing:Check: if_dont_have_enough_neutral
-DEBUG:root:Result: Check: if_dont_have_enough_neutral -> Success
-DEBUG:root:Result: Selector: Spread Selector -> Success
-DEBUG:root:Executing:Check: worth_attacking_neutral
-DEBUG:root:Result: Check: worth_attacking_neutral -> Failure
-DEBUG:root:Result: Sequence: Spread Strategy -> Failure
-DEBUG:root:Executing:Sequence: Offensive Strategy
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Order:15 8 22.0
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Result: Sequence: Offensive Strategy -> Failure
-DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: High Level Ordering of Strategies
-DEBUG:root:Executing:Sequence: Getting what enemy wants
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Executing:Check: if_a_good_neutral_available
-DEBUG:root:Result: Check: if_a_good_neutral_available -> Success
-DEBUG:root:Executing:Action: if_a_good_neutral_available_now
-DEBUG:root:Result: Action: if_a_good_neutral_available_now -> Failure
-DEBUG:root:Result: Sequence: Getting what enemy wants -> Failure
-DEBUG:root:Executing:Sequence: Spread Strategy
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Executing:Selector: Spread Selector
-DEBUG:root:Executing:Check: if_dont_have_enough_neutral
-DEBUG:root:Result: Check: if_dont_have_enough_neutral -> Success
-DEBUG:root:Result: Selector: Spread Selector -> Success
-DEBUG:root:Executing:Check: worth_attacking_neutral
-DEBUG:root:Result: Check: worth_attacking_neutral -> Failure
+DEBUG:root:Result: Check: if_dont_have_enough_neutral -> Failure
+DEBUG:root:Executing:Check: if_enemy_too_far
+DEBUG:root:Result: Check: if_enemy_too_far -> Failure
+DEBUG:root:Result: Selector: Spread Selector -> Failure
 DEBUG:root:Result: Sequence: Spread Strategy -> Failure
 DEBUG:root:Executing:Sequence: Offensive Strategy
 DEBUG:root:Executing:Action: attack_weakest_enemy_planet
@@ -1512,10 +1243,10 @@ DEBUG:root:Executing:Check: if_neutral_planet_available
 DEBUG:root:Result: Check: if_neutral_planet_available -> Success
 DEBUG:root:Executing:Selector: Spread Selector
 DEBUG:root:Executing:Check: if_dont_have_enough_neutral
-DEBUG:root:Result: Check: if_dont_have_enough_neutral -> Success
-DEBUG:root:Result: Selector: Spread Selector -> Success
-DEBUG:root:Executing:Check: worth_attacking_neutral
-DEBUG:root:Result: Check: worth_attacking_neutral -> Failure
+DEBUG:root:Result: Check: if_dont_have_enough_neutral -> Failure
+DEBUG:root:Executing:Check: if_enemy_too_far
+DEBUG:root:Result: Check: if_enemy_too_far -> Failure
+DEBUG:root:Result: Selector: Spread Selector -> Failure
 DEBUG:root:Result: Sequence: Spread Strategy -> Failure
 DEBUG:root:Executing:Sequence: Offensive Strategy
 DEBUG:root:Executing:Action: attack_weakest_enemy_planet
@@ -1538,10 +1269,10 @@ DEBUG:root:Executing:Check: if_neutral_planet_available
 DEBUG:root:Result: Check: if_neutral_planet_available -> Success
 DEBUG:root:Executing:Selector: Spread Selector
 DEBUG:root:Executing:Check: if_dont_have_enough_neutral
-DEBUG:root:Result: Check: if_dont_have_enough_neutral -> Success
-DEBUG:root:Result: Selector: Spread Selector -> Success
-DEBUG:root:Executing:Check: worth_attacking_neutral
-DEBUG:root:Result: Check: worth_attacking_neutral -> Failure
+DEBUG:root:Result: Check: if_dont_have_enough_neutral -> Failure
+DEBUG:root:Executing:Check: if_enemy_too_far
+DEBUG:root:Result: Check: if_enemy_too_far -> Failure
+DEBUG:root:Result: Selector: Spread Selector -> Failure
 DEBUG:root:Result: Sequence: Spread Strategy -> Failure
 DEBUG:root:Executing:Sequence: Offensive Strategy
 DEBUG:root:Executing:Action: attack_weakest_enemy_planet
@@ -1564,10 +1295,10 @@ DEBUG:root:Executing:Check: if_neutral_planet_available
 DEBUG:root:Result: Check: if_neutral_planet_available -> Success
 DEBUG:root:Executing:Selector: Spread Selector
 DEBUG:root:Executing:Check: if_dont_have_enough_neutral
-DEBUG:root:Result: Check: if_dont_have_enough_neutral -> Success
-DEBUG:root:Result: Selector: Spread Selector -> Success
-DEBUG:root:Executing:Check: worth_attacking_neutral
-DEBUG:root:Result: Check: worth_attacking_neutral -> Failure
+DEBUG:root:Result: Check: if_dont_have_enough_neutral -> Failure
+DEBUG:root:Executing:Check: if_enemy_too_far
+DEBUG:root:Result: Check: if_enemy_too_far -> Failure
+DEBUG:root:Result: Selector: Spread Selector -> Failure
 DEBUG:root:Result: Sequence: Spread Strategy -> Failure
 DEBUG:root:Executing:Sequence: Offensive Strategy
 DEBUG:root:Executing:Action: attack_weakest_enemy_planet
@@ -1590,10 +1321,10 @@ DEBUG:root:Executing:Check: if_neutral_planet_available
 DEBUG:root:Result: Check: if_neutral_planet_available -> Success
 DEBUG:root:Executing:Selector: Spread Selector
 DEBUG:root:Executing:Check: if_dont_have_enough_neutral
-DEBUG:root:Result: Check: if_dont_have_enough_neutral -> Success
-DEBUG:root:Result: Selector: Spread Selector -> Success
-DEBUG:root:Executing:Check: worth_attacking_neutral
-DEBUG:root:Result: Check: worth_attacking_neutral -> Failure
+DEBUG:root:Result: Check: if_dont_have_enough_neutral -> Failure
+DEBUG:root:Executing:Check: if_enemy_too_far
+DEBUG:root:Result: Check: if_enemy_too_far -> Failure
+DEBUG:root:Result: Selector: Spread Selector -> Failure
 DEBUG:root:Result: Sequence: Spread Strategy -> Failure
 DEBUG:root:Executing:Sequence: Offensive Strategy
 DEBUG:root:Executing:Action: attack_weakest_enemy_planet
@@ -1616,10 +1347,10 @@ DEBUG:root:Executing:Check: if_neutral_planet_available
 DEBUG:root:Result: Check: if_neutral_planet_available -> Success
 DEBUG:root:Executing:Selector: Spread Selector
 DEBUG:root:Executing:Check: if_dont_have_enough_neutral
-DEBUG:root:Result: Check: if_dont_have_enough_neutral -> Success
-DEBUG:root:Result: Selector: Spread Selector -> Success
-DEBUG:root:Executing:Check: worth_attacking_neutral
-DEBUG:root:Result: Check: worth_attacking_neutral -> Failure
+DEBUG:root:Result: Check: if_dont_have_enough_neutral -> Failure
+DEBUG:root:Executing:Check: if_enemy_too_far
+DEBUG:root:Result: Check: if_enemy_too_far -> Failure
+DEBUG:root:Result: Selector: Spread Selector -> Failure
 DEBUG:root:Result: Sequence: Spread Strategy -> Failure
 DEBUG:root:Executing:Sequence: Offensive Strategy
 DEBUG:root:Executing:Action: attack_weakest_enemy_planet
@@ -1642,10 +1373,10 @@ DEBUG:root:Executing:Check: if_neutral_planet_available
 DEBUG:root:Result: Check: if_neutral_planet_available -> Success
 DEBUG:root:Executing:Selector: Spread Selector
 DEBUG:root:Executing:Check: if_dont_have_enough_neutral
-DEBUG:root:Result: Check: if_dont_have_enough_neutral -> Success
-DEBUG:root:Result: Selector: Spread Selector -> Success
-DEBUG:root:Executing:Check: worth_attacking_neutral
-DEBUG:root:Result: Check: worth_attacking_neutral -> Failure
+DEBUG:root:Result: Check: if_dont_have_enough_neutral -> Failure
+DEBUG:root:Executing:Check: if_enemy_too_far
+DEBUG:root:Result: Check: if_enemy_too_far -> Failure
+DEBUG:root:Result: Selector: Spread Selector -> Failure
 DEBUG:root:Result: Sequence: Spread Strategy -> Failure
 DEBUG:root:Executing:Sequence: Offensive Strategy
 DEBUG:root:Executing:Action: attack_weakest_enemy_planet
@@ -1668,10 +1399,10 @@ DEBUG:root:Executing:Check: if_neutral_planet_available
 DEBUG:root:Result: Check: if_neutral_planet_available -> Success
 DEBUG:root:Executing:Selector: Spread Selector
 DEBUG:root:Executing:Check: if_dont_have_enough_neutral
-DEBUG:root:Result: Check: if_dont_have_enough_neutral -> Success
-DEBUG:root:Result: Selector: Spread Selector -> Success
-DEBUG:root:Executing:Check: worth_attacking_neutral
-DEBUG:root:Result: Check: worth_attacking_neutral -> Failure
+DEBUG:root:Result: Check: if_dont_have_enough_neutral -> Failure
+DEBUG:root:Executing:Check: if_enemy_too_far
+DEBUG:root:Result: Check: if_enemy_too_far -> Failure
+DEBUG:root:Result: Selector: Spread Selector -> Failure
 DEBUG:root:Result: Sequence: Spread Strategy -> Failure
 DEBUG:root:Executing:Sequence: Offensive Strategy
 DEBUG:root:Executing:Action: attack_weakest_enemy_planet
@@ -1694,10 +1425,10 @@ DEBUG:root:Executing:Check: if_neutral_planet_available
 DEBUG:root:Result: Check: if_neutral_planet_available -> Success
 DEBUG:root:Executing:Selector: Spread Selector
 DEBUG:root:Executing:Check: if_dont_have_enough_neutral
-DEBUG:root:Result: Check: if_dont_have_enough_neutral -> Success
-DEBUG:root:Result: Selector: Spread Selector -> Success
-DEBUG:root:Executing:Check: worth_attacking_neutral
-DEBUG:root:Result: Check: worth_attacking_neutral -> Failure
+DEBUG:root:Result: Check: if_dont_have_enough_neutral -> Failure
+DEBUG:root:Executing:Check: if_enemy_too_far
+DEBUG:root:Result: Check: if_enemy_too_far -> Failure
+DEBUG:root:Result: Selector: Spread Selector -> Failure
 DEBUG:root:Result: Sequence: Spread Strategy -> Failure
 DEBUG:root:Executing:Sequence: Offensive Strategy
 DEBUG:root:Executing:Action: attack_weakest_enemy_planet
@@ -1720,10 +1451,37 @@ DEBUG:root:Executing:Check: if_neutral_planet_available
 DEBUG:root:Result: Check: if_neutral_planet_available -> Success
 DEBUG:root:Executing:Selector: Spread Selector
 DEBUG:root:Executing:Check: if_dont_have_enough_neutral
-DEBUG:root:Result: Check: if_dont_have_enough_neutral -> Success
-DEBUG:root:Result: Selector: Spread Selector -> Success
-DEBUG:root:Executing:Check: worth_attacking_neutral
-DEBUG:root:Result: Check: worth_attacking_neutral -> Failure
+DEBUG:root:Result: Check: if_dont_have_enough_neutral -> Failure
+DEBUG:root:Executing:Check: if_enemy_too_far
+DEBUG:root:Result: Check: if_enemy_too_far -> Failure
+DEBUG:root:Result: Selector: Spread Selector -> Failure
+DEBUG:root:Result: Sequence: Spread Strategy -> Failure
+DEBUG:root:Executing:Sequence: Offensive Strategy
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet
+DEBUG:root:Order:17 19 23.0
+DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
+DEBUG:root:Result: Sequence: Offensive Strategy -> Failure
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Getting what enemy wants
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Check: if_a_good_neutral_available
+DEBUG:root:Result: Check: if_a_good_neutral_available -> Success
+DEBUG:root:Executing:Action: if_a_good_neutral_available_now
+DEBUG:root:Result: Action: if_a_good_neutral_available_now -> Failure
+DEBUG:root:Result: Sequence: Getting what enemy wants -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Selector: Spread Selector
+DEBUG:root:Executing:Check: if_dont_have_enough_neutral
+DEBUG:root:Result: Check: if_dont_have_enough_neutral -> Failure
+DEBUG:root:Executing:Check: if_enemy_too_far
+DEBUG:root:Result: Check: if_enemy_too_far -> Failure
+DEBUG:root:Result: Selector: Spread Selector -> Failure
 DEBUG:root:Result: Sequence: Spread Strategy -> Failure
 DEBUG:root:Executing:Sequence: Offensive Strategy
 DEBUG:root:Executing:Action: attack_weakest_enemy_planet
@@ -1746,10 +1504,37 @@ DEBUG:root:Executing:Check: if_neutral_planet_available
 DEBUG:root:Result: Check: if_neutral_planet_available -> Success
 DEBUG:root:Executing:Selector: Spread Selector
 DEBUG:root:Executing:Check: if_dont_have_enough_neutral
-DEBUG:root:Result: Check: if_dont_have_enough_neutral -> Success
-DEBUG:root:Result: Selector: Spread Selector -> Success
-DEBUG:root:Executing:Check: worth_attacking_neutral
-DEBUG:root:Result: Check: worth_attacking_neutral -> Failure
+DEBUG:root:Result: Check: if_dont_have_enough_neutral -> Failure
+DEBUG:root:Executing:Check: if_enemy_too_far
+DEBUG:root:Result: Check: if_enemy_too_far -> Failure
+DEBUG:root:Result: Selector: Spread Selector -> Failure
+DEBUG:root:Result: Sequence: Spread Strategy -> Failure
+DEBUG:root:Executing:Sequence: Offensive Strategy
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet
+DEBUG:root:Order:2 9 8.0
+DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
+DEBUG:root:Result: Sequence: Offensive Strategy -> Failure
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Getting what enemy wants
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Check: if_a_good_neutral_available
+DEBUG:root:Result: Check: if_a_good_neutral_available -> Success
+DEBUG:root:Executing:Action: if_a_good_neutral_available_now
+DEBUG:root:Result: Action: if_a_good_neutral_available_now -> Failure
+DEBUG:root:Result: Sequence: Getting what enemy wants -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Selector: Spread Selector
+DEBUG:root:Executing:Check: if_dont_have_enough_neutral
+DEBUG:root:Result: Check: if_dont_have_enough_neutral -> Failure
+DEBUG:root:Executing:Check: if_enemy_too_far
+DEBUG:root:Result: Check: if_enemy_too_far -> Failure
+DEBUG:root:Result: Selector: Spread Selector -> Failure
 DEBUG:root:Result: Sequence: Spread Strategy -> Failure
 DEBUG:root:Executing:Sequence: Offensive Strategy
 DEBUG:root:Executing:Action: attack_weakest_enemy_planet
@@ -1772,13 +1557,14 @@ DEBUG:root:Executing:Check: if_neutral_planet_available
 DEBUG:root:Result: Check: if_neutral_planet_available -> Success
 DEBUG:root:Executing:Selector: Spread Selector
 DEBUG:root:Executing:Check: if_dont_have_enough_neutral
-DEBUG:root:Result: Check: if_dont_have_enough_neutral -> Success
-DEBUG:root:Result: Selector: Spread Selector -> Success
-DEBUG:root:Executing:Check: worth_attacking_neutral
-DEBUG:root:Result: Check: worth_attacking_neutral -> Failure
+DEBUG:root:Result: Check: if_dont_have_enough_neutral -> Failure
+DEBUG:root:Executing:Check: if_enemy_too_far
+DEBUG:root:Result: Check: if_enemy_too_far -> Failure
+DEBUG:root:Result: Selector: Spread Selector -> Failure
 DEBUG:root:Result: Sequence: Spread Strategy -> Failure
 DEBUG:root:Executing:Sequence: Offensive Strategy
 DEBUG:root:Executing:Action: attack_weakest_enemy_planet
+DEBUG:root:Order:2 5 13.0
 DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
 DEBUG:root:Result: Sequence: Offensive Strategy -> Failure
 DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
@@ -1798,10 +1584,10 @@ DEBUG:root:Executing:Check: if_neutral_planet_available
 DEBUG:root:Result: Check: if_neutral_planet_available -> Success
 DEBUG:root:Executing:Selector: Spread Selector
 DEBUG:root:Executing:Check: if_dont_have_enough_neutral
-DEBUG:root:Result: Check: if_dont_have_enough_neutral -> Success
-DEBUG:root:Result: Selector: Spread Selector -> Success
-DEBUG:root:Executing:Check: worth_attacking_neutral
-DEBUG:root:Result: Check: worth_attacking_neutral -> Failure
+DEBUG:root:Result: Check: if_dont_have_enough_neutral -> Failure
+DEBUG:root:Executing:Check: if_enemy_too_far
+DEBUG:root:Result: Check: if_enemy_too_far -> Failure
+DEBUG:root:Result: Selector: Spread Selector -> Failure
 DEBUG:root:Result: Sequence: Spread Strategy -> Failure
 DEBUG:root:Executing:Sequence: Offensive Strategy
 DEBUG:root:Executing:Action: attack_weakest_enemy_planet
@@ -1815,19 +1601,42 @@ DEBUG:root:Executing:Sequence: Getting what enemy wants
 DEBUG:root:Executing:Check: if_neutral_planet_available
 DEBUG:root:Result: Check: if_neutral_planet_available -> Success
 DEBUG:root:Executing:Check: if_a_good_neutral_available
-DEBUG:root:Result: Check: if_a_good_neutral_available -> Success
-DEBUG:root:Executing:Action: if_a_good_neutral_available_now
-DEBUG:root:Result: Action: if_a_good_neutral_available_now -> Failure
+DEBUG:root:Result: Check: if_a_good_neutral_available -> Failure
 DEBUG:root:Result: Sequence: Getting what enemy wants -> Failure
 DEBUG:root:Executing:Sequence: Spread Strategy
 DEBUG:root:Executing:Check: if_neutral_planet_available
 DEBUG:root:Result: Check: if_neutral_planet_available -> Success
 DEBUG:root:Executing:Selector: Spread Selector
 DEBUG:root:Executing:Check: if_dont_have_enough_neutral
-DEBUG:root:Result: Check: if_dont_have_enough_neutral -> Success
-DEBUG:root:Result: Selector: Spread Selector -> Success
-DEBUG:root:Executing:Check: worth_attacking_neutral
-DEBUG:root:Result: Check: worth_attacking_neutral -> Failure
+DEBUG:root:Result: Check: if_dont_have_enough_neutral -> Failure
+DEBUG:root:Executing:Check: if_enemy_too_far
+DEBUG:root:Result: Check: if_enemy_too_far -> Failure
+DEBUG:root:Result: Selector: Spread Selector -> Failure
+DEBUG:root:Result: Sequence: Spread Strategy -> Failure
+DEBUG:root:Executing:Sequence: Offensive Strategy
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet
+DEBUG:root:Order:2 13 38.0
+DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
+DEBUG:root:Result: Sequence: Offensive Strategy -> Failure
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Getting what enemy wants
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Check: if_a_good_neutral_available
+DEBUG:root:Result: Check: if_a_good_neutral_available -> Failure
+DEBUG:root:Result: Sequence: Getting what enemy wants -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Selector: Spread Selector
+DEBUG:root:Executing:Check: if_dont_have_enough_neutral
+DEBUG:root:Result: Check: if_dont_have_enough_neutral -> Failure
+DEBUG:root:Executing:Check: if_enemy_too_far
+DEBUG:root:Result: Check: if_enemy_too_far -> Failure
+DEBUG:root:Result: Selector: Spread Selector -> Failure
 DEBUG:root:Result: Sequence: Spread Strategy -> Failure
 DEBUG:root:Executing:Sequence: Offensive Strategy
 DEBUG:root:Executing:Action: attack_weakest_enemy_planet
@@ -1841,19 +1650,17 @@ DEBUG:root:Executing:Sequence: Getting what enemy wants
 DEBUG:root:Executing:Check: if_neutral_planet_available
 DEBUG:root:Result: Check: if_neutral_planet_available -> Success
 DEBUG:root:Executing:Check: if_a_good_neutral_available
-DEBUG:root:Result: Check: if_a_good_neutral_available -> Success
-DEBUG:root:Executing:Action: if_a_good_neutral_available_now
-DEBUG:root:Result: Action: if_a_good_neutral_available_now -> Failure
+DEBUG:root:Result: Check: if_a_good_neutral_available -> Failure
 DEBUG:root:Result: Sequence: Getting what enemy wants -> Failure
 DEBUG:root:Executing:Sequence: Spread Strategy
 DEBUG:root:Executing:Check: if_neutral_planet_available
 DEBUG:root:Result: Check: if_neutral_planet_available -> Success
 DEBUG:root:Executing:Selector: Spread Selector
 DEBUG:root:Executing:Check: if_dont_have_enough_neutral
-DEBUG:root:Result: Check: if_dont_have_enough_neutral -> Success
-DEBUG:root:Result: Selector: Spread Selector -> Success
-DEBUG:root:Executing:Check: worth_attacking_neutral
-DEBUG:root:Result: Check: worth_attacking_neutral -> Failure
+DEBUG:root:Result: Check: if_dont_have_enough_neutral -> Failure
+DEBUG:root:Executing:Check: if_enemy_too_far
+DEBUG:root:Result: Check: if_enemy_too_far -> Failure
+DEBUG:root:Result: Selector: Spread Selector -> Failure
 DEBUG:root:Result: Sequence: Spread Strategy -> Failure
 DEBUG:root:Executing:Sequence: Offensive Strategy
 DEBUG:root:Executing:Action: attack_weakest_enemy_planet
@@ -1867,46 +1674,17 @@ DEBUG:root:Executing:Sequence: Getting what enemy wants
 DEBUG:root:Executing:Check: if_neutral_planet_available
 DEBUG:root:Result: Check: if_neutral_planet_available -> Success
 DEBUG:root:Executing:Check: if_a_good_neutral_available
-DEBUG:root:Result: Check: if_a_good_neutral_available -> Success
-DEBUG:root:Executing:Action: if_a_good_neutral_available_now
-DEBUG:root:Result: Action: if_a_good_neutral_available_now -> Failure
+DEBUG:root:Result: Check: if_a_good_neutral_available -> Failure
 DEBUG:root:Result: Sequence: Getting what enemy wants -> Failure
 DEBUG:root:Executing:Sequence: Spread Strategy
 DEBUG:root:Executing:Check: if_neutral_planet_available
 DEBUG:root:Result: Check: if_neutral_planet_available -> Success
 DEBUG:root:Executing:Selector: Spread Selector
 DEBUG:root:Executing:Check: if_dont_have_enough_neutral
-DEBUG:root:Result: Check: if_dont_have_enough_neutral -> Success
-DEBUG:root:Result: Selector: Spread Selector -> Success
-DEBUG:root:Executing:Check: worth_attacking_neutral
-DEBUG:root:Result: Check: worth_attacking_neutral -> Failure
-DEBUG:root:Result: Sequence: Spread Strategy -> Failure
-DEBUG:root:Executing:Sequence: Offensive Strategy
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Order:8 19 14.0
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Result: Sequence: Offensive Strategy -> Failure
-DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: High Level Ordering of Strategies
-DEBUG:root:Executing:Sequence: Getting what enemy wants
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Executing:Check: if_a_good_neutral_available
-DEBUG:root:Result: Check: if_a_good_neutral_available -> Success
-DEBUG:root:Executing:Action: if_a_good_neutral_available_now
-DEBUG:root:Result: Action: if_a_good_neutral_available_now -> Failure
-DEBUG:root:Result: Sequence: Getting what enemy wants -> Failure
-DEBUG:root:Executing:Sequence: Spread Strategy
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Executing:Selector: Spread Selector
-DEBUG:root:Executing:Check: if_dont_have_enough_neutral
-DEBUG:root:Result: Check: if_dont_have_enough_neutral -> Success
-DEBUG:root:Result: Selector: Spread Selector -> Success
-DEBUG:root:Executing:Check: worth_attacking_neutral
-DEBUG:root:Result: Check: worth_attacking_neutral -> Failure
+DEBUG:root:Result: Check: if_dont_have_enough_neutral -> Failure
+DEBUG:root:Executing:Check: if_enemy_too_far
+DEBUG:root:Result: Check: if_enemy_too_far -> Failure
+DEBUG:root:Result: Selector: Spread Selector -> Failure
 DEBUG:root:Result: Sequence: Spread Strategy -> Failure
 DEBUG:root:Executing:Sequence: Offensive Strategy
 DEBUG:root:Executing:Action: attack_weakest_enemy_planet
@@ -1920,19 +1698,17 @@ DEBUG:root:Executing:Sequence: Getting what enemy wants
 DEBUG:root:Executing:Check: if_neutral_planet_available
 DEBUG:root:Result: Check: if_neutral_planet_available -> Success
 DEBUG:root:Executing:Check: if_a_good_neutral_available
-DEBUG:root:Result: Check: if_a_good_neutral_available -> Success
-DEBUG:root:Executing:Action: if_a_good_neutral_available_now
-DEBUG:root:Result: Action: if_a_good_neutral_available_now -> Failure
+DEBUG:root:Result: Check: if_a_good_neutral_available -> Failure
 DEBUG:root:Result: Sequence: Getting what enemy wants -> Failure
 DEBUG:root:Executing:Sequence: Spread Strategy
 DEBUG:root:Executing:Check: if_neutral_planet_available
 DEBUG:root:Result: Check: if_neutral_planet_available -> Success
 DEBUG:root:Executing:Selector: Spread Selector
 DEBUG:root:Executing:Check: if_dont_have_enough_neutral
-DEBUG:root:Result: Check: if_dont_have_enough_neutral -> Success
-DEBUG:root:Result: Selector: Spread Selector -> Success
-DEBUG:root:Executing:Check: worth_attacking_neutral
-DEBUG:root:Result: Check: worth_attacking_neutral -> Failure
+DEBUG:root:Result: Check: if_dont_have_enough_neutral -> Failure
+DEBUG:root:Executing:Check: if_enemy_too_far
+DEBUG:root:Result: Check: if_enemy_too_far -> Failure
+DEBUG:root:Result: Selector: Spread Selector -> Failure
 DEBUG:root:Result: Sequence: Spread Strategy -> Failure
 DEBUG:root:Executing:Sequence: Offensive Strategy
 DEBUG:root:Executing:Action: attack_weakest_enemy_planet
@@ -1944,11 +1720,19 @@ DEBUG:root:Finish turn
 DEBUG:root:Executing:Selector: High Level Ordering of Strategies
 DEBUG:root:Executing:Sequence: Getting what enemy wants
 DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Failure
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Check: if_a_good_neutral_available
+DEBUG:root:Result: Check: if_a_good_neutral_available -> Failure
 DEBUG:root:Result: Sequence: Getting what enemy wants -> Failure
 DEBUG:root:Executing:Sequence: Spread Strategy
 DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Failure
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Selector: Spread Selector
+DEBUG:root:Executing:Check: if_dont_have_enough_neutral
+DEBUG:root:Result: Check: if_dont_have_enough_neutral -> Failure
+DEBUG:root:Executing:Check: if_enemy_too_far
+DEBUG:root:Result: Check: if_enemy_too_far -> Failure
+DEBUG:root:Result: Selector: Spread Selector -> Failure
 DEBUG:root:Result: Sequence: Spread Strategy -> Failure
 DEBUG:root:Executing:Sequence: Offensive Strategy
 DEBUG:root:Executing:Action: attack_weakest_enemy_planet
@@ -1960,11 +1744,19 @@ DEBUG:root:Finish turn
 DEBUG:root:Executing:Selector: High Level Ordering of Strategies
 DEBUG:root:Executing:Sequence: Getting what enemy wants
 DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Failure
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Check: if_a_good_neutral_available
+DEBUG:root:Result: Check: if_a_good_neutral_available -> Failure
 DEBUG:root:Result: Sequence: Getting what enemy wants -> Failure
 DEBUG:root:Executing:Sequence: Spread Strategy
 DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Failure
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Selector: Spread Selector
+DEBUG:root:Executing:Check: if_dont_have_enough_neutral
+DEBUG:root:Result: Check: if_dont_have_enough_neutral -> Failure
+DEBUG:root:Executing:Check: if_enemy_too_far
+DEBUG:root:Result: Check: if_enemy_too_far -> Failure
+DEBUG:root:Result: Selector: Spread Selector -> Failure
 DEBUG:root:Result: Sequence: Spread Strategy -> Failure
 DEBUG:root:Executing:Sequence: Offensive Strategy
 DEBUG:root:Executing:Action: attack_weakest_enemy_planet
@@ -1976,11 +1768,19 @@ DEBUG:root:Finish turn
 DEBUG:root:Executing:Selector: High Level Ordering of Strategies
 DEBUG:root:Executing:Sequence: Getting what enemy wants
 DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Failure
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Check: if_a_good_neutral_available
+DEBUG:root:Result: Check: if_a_good_neutral_available -> Failure
 DEBUG:root:Result: Sequence: Getting what enemy wants -> Failure
 DEBUG:root:Executing:Sequence: Spread Strategy
 DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Failure
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Selector: Spread Selector
+DEBUG:root:Executing:Check: if_dont_have_enough_neutral
+DEBUG:root:Result: Check: if_dont_have_enough_neutral -> Failure
+DEBUG:root:Executing:Check: if_enemy_too_far
+DEBUG:root:Result: Check: if_enemy_too_far -> Failure
+DEBUG:root:Result: Selector: Spread Selector -> Failure
 DEBUG:root:Result: Sequence: Spread Strategy -> Failure
 DEBUG:root:Executing:Sequence: Offensive Strategy
 DEBUG:root:Executing:Action: attack_weakest_enemy_planet
@@ -1992,11 +1792,19 @@ DEBUG:root:Finish turn
 DEBUG:root:Executing:Selector: High Level Ordering of Strategies
 DEBUG:root:Executing:Sequence: Getting what enemy wants
 DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Failure
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Check: if_a_good_neutral_available
+DEBUG:root:Result: Check: if_a_good_neutral_available -> Failure
 DEBUG:root:Result: Sequence: Getting what enemy wants -> Failure
 DEBUG:root:Executing:Sequence: Spread Strategy
 DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Failure
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Selector: Spread Selector
+DEBUG:root:Executing:Check: if_dont_have_enough_neutral
+DEBUG:root:Result: Check: if_dont_have_enough_neutral -> Failure
+DEBUG:root:Executing:Check: if_enemy_too_far
+DEBUG:root:Result: Check: if_enemy_too_far -> Failure
+DEBUG:root:Result: Selector: Spread Selector -> Failure
 DEBUG:root:Result: Sequence: Spread Strategy -> Failure
 DEBUG:root:Executing:Sequence: Offensive Strategy
 DEBUG:root:Executing:Action: attack_weakest_enemy_planet
@@ -2008,11 +1816,19 @@ DEBUG:root:Finish turn
 DEBUG:root:Executing:Selector: High Level Ordering of Strategies
 DEBUG:root:Executing:Sequence: Getting what enemy wants
 DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Failure
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Check: if_a_good_neutral_available
+DEBUG:root:Result: Check: if_a_good_neutral_available -> Failure
 DEBUG:root:Result: Sequence: Getting what enemy wants -> Failure
 DEBUG:root:Executing:Sequence: Spread Strategy
 DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Failure
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Selector: Spread Selector
+DEBUG:root:Executing:Check: if_dont_have_enough_neutral
+DEBUG:root:Result: Check: if_dont_have_enough_neutral -> Failure
+DEBUG:root:Executing:Check: if_enemy_too_far
+DEBUG:root:Result: Check: if_enemy_too_far -> Failure
+DEBUG:root:Result: Selector: Spread Selector -> Failure
 DEBUG:root:Result: Sequence: Spread Strategy -> Failure
 DEBUG:root:Executing:Sequence: Offensive Strategy
 DEBUG:root:Executing:Action: attack_weakest_enemy_planet
@@ -2024,11 +1840,19 @@ DEBUG:root:Finish turn
 DEBUG:root:Executing:Selector: High Level Ordering of Strategies
 DEBUG:root:Executing:Sequence: Getting what enemy wants
 DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Failure
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Check: if_a_good_neutral_available
+DEBUG:root:Result: Check: if_a_good_neutral_available -> Failure
 DEBUG:root:Result: Sequence: Getting what enemy wants -> Failure
 DEBUG:root:Executing:Sequence: Spread Strategy
 DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Failure
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Selector: Spread Selector
+DEBUG:root:Executing:Check: if_dont_have_enough_neutral
+DEBUG:root:Result: Check: if_dont_have_enough_neutral -> Failure
+DEBUG:root:Executing:Check: if_enemy_too_far
+DEBUG:root:Result: Check: if_enemy_too_far -> Failure
+DEBUG:root:Result: Selector: Spread Selector -> Failure
 DEBUG:root:Result: Sequence: Spread Strategy -> Failure
 DEBUG:root:Executing:Sequence: Offensive Strategy
 DEBUG:root:Executing:Action: attack_weakest_enemy_planet
@@ -2040,28 +1864,19 @@ DEBUG:root:Finish turn
 DEBUG:root:Executing:Selector: High Level Ordering of Strategies
 DEBUG:root:Executing:Sequence: Getting what enemy wants
 DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Failure
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Check: if_a_good_neutral_available
+DEBUG:root:Result: Check: if_a_good_neutral_available -> Failure
 DEBUG:root:Result: Sequence: Getting what enemy wants -> Failure
 DEBUG:root:Executing:Sequence: Spread Strategy
 DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Failure
-DEBUG:root:Result: Sequence: Spread Strategy -> Failure
-DEBUG:root:Executing:Sequence: Offensive Strategy
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Order:19 0 2.0
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Result: Sequence: Offensive Strategy -> Failure
-DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: High Level Ordering of Strategies
-DEBUG:root:Executing:Sequence: Getting what enemy wants
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Failure
-DEBUG:root:Result: Sequence: Getting what enemy wants -> Failure
-DEBUG:root:Executing:Sequence: Spread Strategy
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Failure
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Selector: Spread Selector
+DEBUG:root:Executing:Check: if_dont_have_enough_neutral
+DEBUG:root:Result: Check: if_dont_have_enough_neutral -> Failure
+DEBUG:root:Executing:Check: if_enemy_too_far
+DEBUG:root:Result: Check: if_enemy_too_far -> Failure
+DEBUG:root:Result: Selector: Spread Selector -> Failure
 DEBUG:root:Result: Sequence: Spread Strategy -> Failure
 DEBUG:root:Executing:Sequence: Offensive Strategy
 DEBUG:root:Executing:Action: attack_weakest_enemy_planet
@@ -2073,11 +1888,19 @@ DEBUG:root:Finish turn
 DEBUG:root:Executing:Selector: High Level Ordering of Strategies
 DEBUG:root:Executing:Sequence: Getting what enemy wants
 DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Failure
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Check: if_a_good_neutral_available
+DEBUG:root:Result: Check: if_a_good_neutral_available -> Failure
 DEBUG:root:Result: Sequence: Getting what enemy wants -> Failure
 DEBUG:root:Executing:Sequence: Spread Strategy
 DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Failure
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Selector: Spread Selector
+DEBUG:root:Executing:Check: if_dont_have_enough_neutral
+DEBUG:root:Result: Check: if_dont_have_enough_neutral -> Failure
+DEBUG:root:Executing:Check: if_enemy_too_far
+DEBUG:root:Result: Check: if_enemy_too_far -> Failure
+DEBUG:root:Result: Selector: Spread Selector -> Failure
 DEBUG:root:Result: Sequence: Spread Strategy -> Failure
 DEBUG:root:Executing:Sequence: Offensive Strategy
 DEBUG:root:Executing:Action: attack_weakest_enemy_planet
@@ -2089,11 +1912,44 @@ DEBUG:root:Finish turn
 DEBUG:root:Executing:Selector: High Level Ordering of Strategies
 DEBUG:root:Executing:Sequence: Getting what enemy wants
 DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Failure
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Check: if_a_good_neutral_available
+DEBUG:root:Result: Check: if_a_good_neutral_available -> Failure
 DEBUG:root:Result: Sequence: Getting what enemy wants -> Failure
 DEBUG:root:Executing:Sequence: Spread Strategy
 DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Failure
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Selector: Spread Selector
+DEBUG:root:Executing:Check: if_dont_have_enough_neutral
+DEBUG:root:Result: Check: if_dont_have_enough_neutral -> Failure
+DEBUG:root:Executing:Check: if_enemy_too_far
+DEBUG:root:Result: Check: if_enemy_too_far -> Failure
+DEBUG:root:Result: Selector: Spread Selector -> Failure
+DEBUG:root:Result: Sequence: Spread Strategy -> Failure
+DEBUG:root:Executing:Sequence: Offensive Strategy
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet
+DEBUG:root:Order:17 6 18.0
+DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
+DEBUG:root:Result: Sequence: Offensive Strategy -> Failure
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Getting what enemy wants
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Check: if_a_good_neutral_available
+DEBUG:root:Result: Check: if_a_good_neutral_available -> Failure
+DEBUG:root:Result: Sequence: Getting what enemy wants -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Selector: Spread Selector
+DEBUG:root:Executing:Check: if_dont_have_enough_neutral
+DEBUG:root:Result: Check: if_dont_have_enough_neutral -> Failure
+DEBUG:root:Executing:Check: if_enemy_too_far
+DEBUG:root:Result: Check: if_enemy_too_far -> Failure
+DEBUG:root:Result: Selector: Spread Selector -> Failure
 DEBUG:root:Result: Sequence: Spread Strategy -> Failure
 DEBUG:root:Executing:Sequence: Offensive Strategy
 DEBUG:root:Executing:Action: attack_weakest_enemy_planet
@@ -2105,11 +1961,19 @@ DEBUG:root:Finish turn
 DEBUG:root:Executing:Selector: High Level Ordering of Strategies
 DEBUG:root:Executing:Sequence: Getting what enemy wants
 DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Failure
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Check: if_a_good_neutral_available
+DEBUG:root:Result: Check: if_a_good_neutral_available -> Failure
 DEBUG:root:Result: Sequence: Getting what enemy wants -> Failure
 DEBUG:root:Executing:Sequence: Spread Strategy
 DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Failure
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Selector: Spread Selector
+DEBUG:root:Executing:Check: if_dont_have_enough_neutral
+DEBUG:root:Result: Check: if_dont_have_enough_neutral -> Failure
+DEBUG:root:Executing:Check: if_enemy_too_far
+DEBUG:root:Result: Check: if_enemy_too_far -> Failure
+DEBUG:root:Result: Selector: Spread Selector -> Failure
 DEBUG:root:Result: Sequence: Spread Strategy -> Failure
 DEBUG:root:Executing:Sequence: Offensive Strategy
 DEBUG:root:Executing:Action: attack_weakest_enemy_planet
@@ -2121,11 +1985,19 @@ DEBUG:root:Finish turn
 DEBUG:root:Executing:Selector: High Level Ordering of Strategies
 DEBUG:root:Executing:Sequence: Getting what enemy wants
 DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Failure
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Check: if_a_good_neutral_available
+DEBUG:root:Result: Check: if_a_good_neutral_available -> Failure
 DEBUG:root:Result: Sequence: Getting what enemy wants -> Failure
 DEBUG:root:Executing:Sequence: Spread Strategy
 DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Failure
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Selector: Spread Selector
+DEBUG:root:Executing:Check: if_dont_have_enough_neutral
+DEBUG:root:Result: Check: if_dont_have_enough_neutral -> Failure
+DEBUG:root:Executing:Check: if_enemy_too_far
+DEBUG:root:Result: Check: if_enemy_too_far -> Failure
+DEBUG:root:Result: Selector: Spread Selector -> Failure
 DEBUG:root:Result: Sequence: Spread Strategy -> Failure
 DEBUG:root:Executing:Sequence: Offensive Strategy
 DEBUG:root:Executing:Action: attack_weakest_enemy_planet
@@ -2137,11 +2009,19 @@ DEBUG:root:Finish turn
 DEBUG:root:Executing:Selector: High Level Ordering of Strategies
 DEBUG:root:Executing:Sequence: Getting what enemy wants
 DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Failure
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Check: if_a_good_neutral_available
+DEBUG:root:Result: Check: if_a_good_neutral_available -> Failure
 DEBUG:root:Result: Sequence: Getting what enemy wants -> Failure
 DEBUG:root:Executing:Sequence: Spread Strategy
 DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Failure
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Selector: Spread Selector
+DEBUG:root:Executing:Check: if_dont_have_enough_neutral
+DEBUG:root:Result: Check: if_dont_have_enough_neutral -> Failure
+DEBUG:root:Executing:Check: if_enemy_too_far
+DEBUG:root:Result: Check: if_enemy_too_far -> Failure
+DEBUG:root:Result: Selector: Spread Selector -> Failure
 DEBUG:root:Result: Sequence: Spread Strategy -> Failure
 DEBUG:root:Executing:Sequence: Offensive Strategy
 DEBUG:root:Executing:Action: attack_weakest_enemy_planet
@@ -2153,11 +2033,19 @@ DEBUG:root:Finish turn
 DEBUG:root:Executing:Selector: High Level Ordering of Strategies
 DEBUG:root:Executing:Sequence: Getting what enemy wants
 DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Failure
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Check: if_a_good_neutral_available
+DEBUG:root:Result: Check: if_a_good_neutral_available -> Failure
 DEBUG:root:Result: Sequence: Getting what enemy wants -> Failure
 DEBUG:root:Executing:Sequence: Spread Strategy
 DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Failure
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Selector: Spread Selector
+DEBUG:root:Executing:Check: if_dont_have_enough_neutral
+DEBUG:root:Result: Check: if_dont_have_enough_neutral -> Failure
+DEBUG:root:Executing:Check: if_enemy_too_far
+DEBUG:root:Result: Check: if_enemy_too_far -> Failure
+DEBUG:root:Result: Selector: Spread Selector -> Failure
 DEBUG:root:Result: Sequence: Spread Strategy -> Failure
 DEBUG:root:Executing:Sequence: Offensive Strategy
 DEBUG:root:Executing:Action: attack_weakest_enemy_planet
@@ -2169,11 +2057,19 @@ DEBUG:root:Finish turn
 DEBUG:root:Executing:Selector: High Level Ordering of Strategies
 DEBUG:root:Executing:Sequence: Getting what enemy wants
 DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Failure
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Check: if_a_good_neutral_available
+DEBUG:root:Result: Check: if_a_good_neutral_available -> Failure
 DEBUG:root:Result: Sequence: Getting what enemy wants -> Failure
 DEBUG:root:Executing:Sequence: Spread Strategy
 DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Failure
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Selector: Spread Selector
+DEBUG:root:Executing:Check: if_dont_have_enough_neutral
+DEBUG:root:Result: Check: if_dont_have_enough_neutral -> Failure
+DEBUG:root:Executing:Check: if_enemy_too_far
+DEBUG:root:Result: Check: if_enemy_too_far -> Failure
+DEBUG:root:Result: Selector: Spread Selector -> Failure
 DEBUG:root:Result: Sequence: Spread Strategy -> Failure
 DEBUG:root:Executing:Sequence: Offensive Strategy
 DEBUG:root:Executing:Action: attack_weakest_enemy_planet
@@ -2185,11 +2081,19 @@ DEBUG:root:Finish turn
 DEBUG:root:Executing:Selector: High Level Ordering of Strategies
 DEBUG:root:Executing:Sequence: Getting what enemy wants
 DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Failure
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Check: if_a_good_neutral_available
+DEBUG:root:Result: Check: if_a_good_neutral_available -> Failure
 DEBUG:root:Result: Sequence: Getting what enemy wants -> Failure
 DEBUG:root:Executing:Sequence: Spread Strategy
 DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Failure
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Selector: Spread Selector
+DEBUG:root:Executing:Check: if_dont_have_enough_neutral
+DEBUG:root:Result: Check: if_dont_have_enough_neutral -> Failure
+DEBUG:root:Executing:Check: if_enemy_too_far
+DEBUG:root:Result: Check: if_enemy_too_far -> Failure
+DEBUG:root:Result: Selector: Spread Selector -> Failure
 DEBUG:root:Result: Sequence: Spread Strategy -> Failure
 DEBUG:root:Executing:Sequence: Offensive Strategy
 DEBUG:root:Executing:Action: attack_weakest_enemy_planet
@@ -2201,11 +2105,44 @@ DEBUG:root:Finish turn
 DEBUG:root:Executing:Selector: High Level Ordering of Strategies
 DEBUG:root:Executing:Sequence: Getting what enemy wants
 DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Failure
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Check: if_a_good_neutral_available
+DEBUG:root:Result: Check: if_a_good_neutral_available -> Failure
 DEBUG:root:Result: Sequence: Getting what enemy wants -> Failure
 DEBUG:root:Executing:Sequence: Spread Strategy
 DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Failure
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Selector: Spread Selector
+DEBUG:root:Executing:Check: if_dont_have_enough_neutral
+DEBUG:root:Result: Check: if_dont_have_enough_neutral -> Failure
+DEBUG:root:Executing:Check: if_enemy_too_far
+DEBUG:root:Result: Check: if_enemy_too_far -> Failure
+DEBUG:root:Result: Selector: Spread Selector -> Failure
+DEBUG:root:Result: Sequence: Spread Strategy -> Failure
+DEBUG:root:Executing:Sequence: Offensive Strategy
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet
+DEBUG:root:Order:9 5 18.0
+DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
+DEBUG:root:Result: Sequence: Offensive Strategy -> Failure
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Getting what enemy wants
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Check: if_a_good_neutral_available
+DEBUG:root:Result: Check: if_a_good_neutral_available -> Failure
+DEBUG:root:Result: Sequence: Getting what enemy wants -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Selector: Spread Selector
+DEBUG:root:Executing:Check: if_dont_have_enough_neutral
+DEBUG:root:Result: Check: if_dont_have_enough_neutral -> Failure
+DEBUG:root:Executing:Check: if_enemy_too_far
+DEBUG:root:Result: Check: if_enemy_too_far -> Failure
+DEBUG:root:Result: Selector: Spread Selector -> Failure
 DEBUG:root:Result: Sequence: Spread Strategy -> Failure
 DEBUG:root:Executing:Sequence: Offensive Strategy
 DEBUG:root:Executing:Action: attack_weakest_enemy_planet
@@ -2217,11 +2154,19 @@ DEBUG:root:Finish turn
 DEBUG:root:Executing:Selector: High Level Ordering of Strategies
 DEBUG:root:Executing:Sequence: Getting what enemy wants
 DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Failure
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Check: if_a_good_neutral_available
+DEBUG:root:Result: Check: if_a_good_neutral_available -> Failure
 DEBUG:root:Result: Sequence: Getting what enemy wants -> Failure
 DEBUG:root:Executing:Sequence: Spread Strategy
 DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Failure
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Selector: Spread Selector
+DEBUG:root:Executing:Check: if_dont_have_enough_neutral
+DEBUG:root:Result: Check: if_dont_have_enough_neutral -> Failure
+DEBUG:root:Executing:Check: if_enemy_too_far
+DEBUG:root:Result: Check: if_enemy_too_far -> Failure
+DEBUG:root:Result: Selector: Spread Selector -> Failure
 DEBUG:root:Result: Sequence: Spread Strategy -> Failure
 DEBUG:root:Executing:Sequence: Offensive Strategy
 DEBUG:root:Executing:Action: attack_weakest_enemy_planet
@@ -2233,11 +2178,44 @@ DEBUG:root:Finish turn
 DEBUG:root:Executing:Selector: High Level Ordering of Strategies
 DEBUG:root:Executing:Sequence: Getting what enemy wants
 DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Failure
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Check: if_a_good_neutral_available
+DEBUG:root:Result: Check: if_a_good_neutral_available -> Failure
 DEBUG:root:Result: Sequence: Getting what enemy wants -> Failure
 DEBUG:root:Executing:Sequence: Spread Strategy
 DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Failure
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Selector: Spread Selector
+DEBUG:root:Executing:Check: if_dont_have_enough_neutral
+DEBUG:root:Result: Check: if_dont_have_enough_neutral -> Failure
+DEBUG:root:Executing:Check: if_enemy_too_far
+DEBUG:root:Result: Check: if_enemy_too_far -> Failure
+DEBUG:root:Result: Selector: Spread Selector -> Failure
+DEBUG:root:Result: Sequence: Spread Strategy -> Failure
+DEBUG:root:Executing:Sequence: Offensive Strategy
+DEBUG:root:Executing:Action: attack_weakest_enemy_planet
+DEBUG:root:Order:13 19 11.0
+DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
+DEBUG:root:Result: Sequence: Offensive Strategy -> Failure
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Getting what enemy wants
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Check: if_a_good_neutral_available
+DEBUG:root:Result: Check: if_a_good_neutral_available -> Failure
+DEBUG:root:Result: Sequence: Getting what enemy wants -> Failure
+DEBUG:root:Executing:Sequence: Spread Strategy
+DEBUG:root:Executing:Check: if_neutral_planet_available
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Selector: Spread Selector
+DEBUG:root:Executing:Check: if_dont_have_enough_neutral
+DEBUG:root:Result: Check: if_dont_have_enough_neutral -> Failure
+DEBUG:root:Executing:Check: if_enemy_too_far
+DEBUG:root:Result: Check: if_enemy_too_far -> Failure
+DEBUG:root:Result: Selector: Spread Selector -> Failure
 DEBUG:root:Result: Sequence: Spread Strategy -> Failure
 DEBUG:root:Executing:Sequence: Offensive Strategy
 DEBUG:root:Executing:Action: attack_weakest_enemy_planet
@@ -2249,11 +2227,19 @@ DEBUG:root:Finish turn
 DEBUG:root:Executing:Selector: High Level Ordering of Strategies
 DEBUG:root:Executing:Sequence: Getting what enemy wants
 DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Failure
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Check: if_a_good_neutral_available
+DEBUG:root:Result: Check: if_a_good_neutral_available -> Failure
 DEBUG:root:Result: Sequence: Getting what enemy wants -> Failure
 DEBUG:root:Executing:Sequence: Spread Strategy
 DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Failure
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Selector: Spread Selector
+DEBUG:root:Executing:Check: if_dont_have_enough_neutral
+DEBUG:root:Result: Check: if_dont_have_enough_neutral -> Failure
+DEBUG:root:Executing:Check: if_enemy_too_far
+DEBUG:root:Result: Check: if_enemy_too_far -> Failure
+DEBUG:root:Result: Selector: Spread Selector -> Failure
 DEBUG:root:Result: Sequence: Spread Strategy -> Failure
 DEBUG:root:Executing:Sequence: Offensive Strategy
 DEBUG:root:Executing:Action: attack_weakest_enemy_planet
@@ -2265,11 +2251,19 @@ DEBUG:root:Finish turn
 DEBUG:root:Executing:Selector: High Level Ordering of Strategies
 DEBUG:root:Executing:Sequence: Getting what enemy wants
 DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Failure
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Check: if_a_good_neutral_available
+DEBUG:root:Result: Check: if_a_good_neutral_available -> Failure
 DEBUG:root:Result: Sequence: Getting what enemy wants -> Failure
 DEBUG:root:Executing:Sequence: Spread Strategy
 DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Failure
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Selector: Spread Selector
+DEBUG:root:Executing:Check: if_dont_have_enough_neutral
+DEBUG:root:Result: Check: if_dont_have_enough_neutral -> Failure
+DEBUG:root:Executing:Check: if_enemy_too_far
+DEBUG:root:Result: Check: if_enemy_too_far -> Failure
+DEBUG:root:Result: Selector: Spread Selector -> Failure
 DEBUG:root:Result: Sequence: Spread Strategy -> Failure
 DEBUG:root:Executing:Sequence: Offensive Strategy
 DEBUG:root:Executing:Action: attack_weakest_enemy_planet
@@ -2281,11 +2275,19 @@ DEBUG:root:Finish turn
 DEBUG:root:Executing:Selector: High Level Ordering of Strategies
 DEBUG:root:Executing:Sequence: Getting what enemy wants
 DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Failure
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Check: if_a_good_neutral_available
+DEBUG:root:Result: Check: if_a_good_neutral_available -> Failure
 DEBUG:root:Result: Sequence: Getting what enemy wants -> Failure
 DEBUG:root:Executing:Sequence: Spread Strategy
 DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Failure
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Selector: Spread Selector
+DEBUG:root:Executing:Check: if_dont_have_enough_neutral
+DEBUG:root:Result: Check: if_dont_have_enough_neutral -> Failure
+DEBUG:root:Executing:Check: if_enemy_too_far
+DEBUG:root:Result: Check: if_enemy_too_far -> Failure
+DEBUG:root:Result: Selector: Spread Selector -> Failure
 DEBUG:root:Result: Sequence: Spread Strategy -> Failure
 DEBUG:root:Executing:Sequence: Offensive Strategy
 DEBUG:root:Executing:Action: attack_weakest_enemy_planet
@@ -2297,11 +2299,19 @@ DEBUG:root:Finish turn
 DEBUG:root:Executing:Selector: High Level Ordering of Strategies
 DEBUG:root:Executing:Sequence: Getting what enemy wants
 DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Failure
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Check: if_a_good_neutral_available
+DEBUG:root:Result: Check: if_a_good_neutral_available -> Failure
 DEBUG:root:Result: Sequence: Getting what enemy wants -> Failure
 DEBUG:root:Executing:Sequence: Spread Strategy
 DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Failure
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Selector: Spread Selector
+DEBUG:root:Executing:Check: if_dont_have_enough_neutral
+DEBUG:root:Result: Check: if_dont_have_enough_neutral -> Failure
+DEBUG:root:Executing:Check: if_enemy_too_far
+DEBUG:root:Result: Check: if_enemy_too_far -> Failure
+DEBUG:root:Result: Selector: Spread Selector -> Failure
 DEBUG:root:Result: Sequence: Spread Strategy -> Failure
 DEBUG:root:Executing:Sequence: Offensive Strategy
 DEBUG:root:Executing:Action: attack_weakest_enemy_planet
@@ -2313,11 +2323,19 @@ DEBUG:root:Finish turn
 DEBUG:root:Executing:Selector: High Level Ordering of Strategies
 DEBUG:root:Executing:Sequence: Getting what enemy wants
 DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Failure
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Check: if_a_good_neutral_available
+DEBUG:root:Result: Check: if_a_good_neutral_available -> Failure
 DEBUG:root:Result: Sequence: Getting what enemy wants -> Failure
 DEBUG:root:Executing:Sequence: Spread Strategy
 DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Failure
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Selector: Spread Selector
+DEBUG:root:Executing:Check: if_dont_have_enough_neutral
+DEBUG:root:Result: Check: if_dont_have_enough_neutral -> Failure
+DEBUG:root:Executing:Check: if_enemy_too_far
+DEBUG:root:Result: Check: if_enemy_too_far -> Failure
+DEBUG:root:Result: Selector: Spread Selector -> Failure
 DEBUG:root:Result: Sequence: Spread Strategy -> Failure
 DEBUG:root:Executing:Sequence: Offensive Strategy
 DEBUG:root:Executing:Action: attack_weakest_enemy_planet
@@ -2329,11 +2347,19 @@ DEBUG:root:Finish turn
 DEBUG:root:Executing:Selector: High Level Ordering of Strategies
 DEBUG:root:Executing:Sequence: Getting what enemy wants
 DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Failure
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Check: if_a_good_neutral_available
+DEBUG:root:Result: Check: if_a_good_neutral_available -> Failure
 DEBUG:root:Result: Sequence: Getting what enemy wants -> Failure
 DEBUG:root:Executing:Sequence: Spread Strategy
 DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Failure
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Selector: Spread Selector
+DEBUG:root:Executing:Check: if_dont_have_enough_neutral
+DEBUG:root:Result: Check: if_dont_have_enough_neutral -> Failure
+DEBUG:root:Executing:Check: if_enemy_too_far
+DEBUG:root:Result: Check: if_enemy_too_far -> Failure
+DEBUG:root:Result: Selector: Spread Selector -> Failure
 DEBUG:root:Result: Sequence: Spread Strategy -> Failure
 DEBUG:root:Executing:Sequence: Offensive Strategy
 DEBUG:root:Executing:Action: attack_weakest_enemy_planet
@@ -2345,11 +2371,19 @@ DEBUG:root:Finish turn
 DEBUG:root:Executing:Selector: High Level Ordering of Strategies
 DEBUG:root:Executing:Sequence: Getting what enemy wants
 DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Failure
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Check: if_a_good_neutral_available
+DEBUG:root:Result: Check: if_a_good_neutral_available -> Failure
 DEBUG:root:Result: Sequence: Getting what enemy wants -> Failure
 DEBUG:root:Executing:Sequence: Spread Strategy
 DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Failure
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Selector: Spread Selector
+DEBUG:root:Executing:Check: if_dont_have_enough_neutral
+DEBUG:root:Result: Check: if_dont_have_enough_neutral -> Failure
+DEBUG:root:Executing:Check: if_enemy_too_far
+DEBUG:root:Result: Check: if_enemy_too_far -> Failure
+DEBUG:root:Result: Selector: Spread Selector -> Failure
 DEBUG:root:Result: Sequence: Spread Strategy -> Failure
 DEBUG:root:Executing:Sequence: Offensive Strategy
 DEBUG:root:Executing:Action: attack_weakest_enemy_planet
@@ -2361,11 +2395,19 @@ DEBUG:root:Finish turn
 DEBUG:root:Executing:Selector: High Level Ordering of Strategies
 DEBUG:root:Executing:Sequence: Getting what enemy wants
 DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Failure
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Check: if_a_good_neutral_available
+DEBUG:root:Result: Check: if_a_good_neutral_available -> Failure
 DEBUG:root:Result: Sequence: Getting what enemy wants -> Failure
 DEBUG:root:Executing:Sequence: Spread Strategy
 DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Failure
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Selector: Spread Selector
+DEBUG:root:Executing:Check: if_dont_have_enough_neutral
+DEBUG:root:Result: Check: if_dont_have_enough_neutral -> Failure
+DEBUG:root:Executing:Check: if_enemy_too_far
+DEBUG:root:Result: Check: if_enemy_too_far -> Failure
+DEBUG:root:Result: Selector: Spread Selector -> Failure
 DEBUG:root:Result: Sequence: Spread Strategy -> Failure
 DEBUG:root:Executing:Sequence: Offensive Strategy
 DEBUG:root:Executing:Action: attack_weakest_enemy_planet
@@ -2377,11 +2419,19 @@ DEBUG:root:Finish turn
 DEBUG:root:Executing:Selector: High Level Ordering of Strategies
 DEBUG:root:Executing:Sequence: Getting what enemy wants
 DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Failure
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Check: if_a_good_neutral_available
+DEBUG:root:Result: Check: if_a_good_neutral_available -> Failure
 DEBUG:root:Result: Sequence: Getting what enemy wants -> Failure
 DEBUG:root:Executing:Sequence: Spread Strategy
 DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Failure
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Selector: Spread Selector
+DEBUG:root:Executing:Check: if_dont_have_enough_neutral
+DEBUG:root:Result: Check: if_dont_have_enough_neutral -> Failure
+DEBUG:root:Executing:Check: if_enemy_too_far
+DEBUG:root:Result: Check: if_enemy_too_far -> Failure
+DEBUG:root:Result: Selector: Spread Selector -> Failure
 DEBUG:root:Result: Sequence: Spread Strategy -> Failure
 DEBUG:root:Executing:Sequence: Offensive Strategy
 DEBUG:root:Executing:Action: attack_weakest_enemy_planet
@@ -2393,11 +2443,19 @@ DEBUG:root:Finish turn
 DEBUG:root:Executing:Selector: High Level Ordering of Strategies
 DEBUG:root:Executing:Sequence: Getting what enemy wants
 DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Failure
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Check: if_a_good_neutral_available
+DEBUG:root:Result: Check: if_a_good_neutral_available -> Failure
 DEBUG:root:Result: Sequence: Getting what enemy wants -> Failure
 DEBUG:root:Executing:Sequence: Spread Strategy
 DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Failure
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Selector: Spread Selector
+DEBUG:root:Executing:Check: if_dont_have_enough_neutral
+DEBUG:root:Result: Check: if_dont_have_enough_neutral -> Failure
+DEBUG:root:Executing:Check: if_enemy_too_far
+DEBUG:root:Result: Check: if_enemy_too_far -> Failure
+DEBUG:root:Result: Selector: Spread Selector -> Failure
 DEBUG:root:Result: Sequence: Spread Strategy -> Failure
 DEBUG:root:Executing:Sequence: Offensive Strategy
 DEBUG:root:Executing:Action: attack_weakest_enemy_planet
@@ -2409,11 +2467,19 @@ DEBUG:root:Finish turn
 DEBUG:root:Executing:Selector: High Level Ordering of Strategies
 DEBUG:root:Executing:Sequence: Getting what enemy wants
 DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Failure
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Check: if_a_good_neutral_available
+DEBUG:root:Result: Check: if_a_good_neutral_available -> Failure
 DEBUG:root:Result: Sequence: Getting what enemy wants -> Failure
 DEBUG:root:Executing:Sequence: Spread Strategy
 DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Failure
+DEBUG:root:Result: Check: if_neutral_planet_available -> Success
+DEBUG:root:Executing:Selector: Spread Selector
+DEBUG:root:Executing:Check: if_dont_have_enough_neutral
+DEBUG:root:Result: Check: if_dont_have_enough_neutral -> Failure
+DEBUG:root:Executing:Check: if_enemy_too_far
+DEBUG:root:Result: Check: if_enemy_too_far -> Failure
+DEBUG:root:Result: Selector: Spread Selector -> Failure
 DEBUG:root:Result: Sequence: Spread Strategy -> Failure
 DEBUG:root:Executing:Sequence: Offensive Strategy
 DEBUG:root:Executing:Action: attack_weakest_enemy_planet

@@ -64,11 +64,11 @@ if __name__ == '__main__':
 
     #opponents = ['opponent_bots/defensive_bot.py']
 
-    opponents = ['opponent_bots/spread_bot.py',
-                 'opponent_bots/spread_bot.py',
-                 'opponent_bots/spread_bot.py',
-                 'opponent_bots/spread_bot.py',
-                 'opponent_bots/spread_bot.py']
+    opponents = ['opponent_bots/production_bot.py',
+                 'opponent_bots/production_bot.py',
+                 'opponent_bots/production_bot.py',
+                 'opponent_bots/production_bot.py',
+                 'opponent_bots/production_bot.py']
 
     a = randint(1,99)
     b = randint(1,99)
