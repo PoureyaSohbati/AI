@@ -180,7 +180,7 @@ if __name__ == '__main__':
     print('Goal:',Crafting['Goal'])
 
     # Dict of crafting recipes (each is a dict):
-    print('Example recipe:','craft stone_pickaxe at bench ->',Crafting['Recipes']['craft stone_pickaxe at bench'])
+    #print('Example recipe:','craft stone_pickaxe at bench ->',Crafting['Recipes']['craft stone_pickaxe at bench'])
 
     # Build rules
     all_recipes = []
@@ -198,24 +198,26 @@ if __name__ == '__main__':
     state.update(Crafting['Initial'])
 
     """
-    print ("Original State: ", state)
-    newstate = state.copy();
-    for i in all_recipes:
-        if i.name == "craft furnace at bench":
-            if i.check(state) == False:
-                print ("fuck")
-            else:
-                newstate = i.effect(state)
-                print ("New State: ", newstate)
+        print ("Original State: ", state)
+        newstate = state.copy();
+        for i in all_recipes:
+            if i.name == "craft furnace at bench":
+                if i.check(state) == False:
+                    print ("fuck")
+                else:
+                    newstate = i.effect(state)
+                    print ("New State: ", newstate)
 
-    if is_goal(newstate):
-        print("goal satisfied")
-    else:
-        print("goal failed")
+        if is_goal(newstate):
+            print("goal satisfied")
+        else:
+            print("goal failed")
     """
+
     # Search - This is you!
     total_cost, actions = search(graph, state, is_goal, 30, heuristic)
-    print (state)
+    if actions:
+        print (state)
     for action in actions:
         for recipe in all_recipes:
             if action == recipe.name:
