@@ -123,7 +123,7 @@ def search(graph, state, is_goal, limit, heuristic):
     queue = []
     cost = {}
     prev = {}
-    action = {}
+    action = []
 
     """
     for vertex in graph['spaces']:
@@ -133,27 +133,31 @@ def search(graph, state, is_goal, limit, heuristic):
 
     cost[state] = 0
     prev[state] = None
-    action[state] = None
-    heappush(queue, (cost[state], state, action[state]))
-
+    #action[state] = None
+    #heappush(queue, (cost[state], state, action[state]))
+    heappush(queue, (cost[state], state, None))
+    #heappush(queue, (cost[state], state))
 
     # Search
     while time() - start_time < limit:
         node = heappop(queue)
         
         if is_goal(node[1]):
-            print ("Found it")
-            print (node[0], "\n", node[1], "\n", node[2])
-            return
+            total_cost = node[0]
+            while node != None:
+                action.append(node[2])
+                node = prev[node[1]]
+            action.reverse()
+            return total_cost, action
 
         for a, s, c in graph(node[1]):
             #print ("@@@@@  ", a, "    ", s, "     ", c)
             #parent cost + new cost
             alt = node[0] + c
-            #print (alt)
             if s not in cost.keys() or alt < cost[s]:
                 cost[s] = alt
                 prev[s] = node
+                #action[s] = a
                 new_node = (alt, s, a)
                 if new_node not in queue:
                     heappush(queue, new_node)
@@ -210,7 +214,14 @@ if __name__ == '__main__':
         print("goal failed")
     """
     # Search - This is you!
-    search(graph, state, is_goal, 30, heuristic)
+    total_cost, actions = search(graph, state, is_goal, 30, heuristic)
+    print (state)
+    for action in actions:
+        for recipe in all_recipes:
+            if action == recipe.name:
+                state = recipe.effect(state)
+                print (state)
+    print("total_cost: ", total_cost, ", length: ", len(actions))
 
 
 
