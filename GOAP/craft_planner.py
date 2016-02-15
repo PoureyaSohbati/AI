@@ -123,13 +123,13 @@ def search(graph, state, is_goal, limit, heuristic):
     queue = []
     cost = {}
     prev = {}
-    action = []
+    action = {}
 
-"""
+    """
     for vertex in graph['spaces']:
         cost[vertex] = inf
         prev[vertex] = None
-"""
+    """
 
     cost[state] = 0
     prev[state] = None
@@ -139,25 +139,24 @@ def search(graph, state, is_goal, limit, heuristic):
 
     # Search
     while time() - start_time < limit:
-        d, v = heappop(queue)
+        node = heappop(queue)
         
-        if v == destination:
-            while v != None:
-                path.append(v)
-                v = prev[v]
-            path.reverse()
-            return path
-                
-        neighbors = adj(graph, v)
-        for n, c in neighbors.items():
-            alt = cost[v] + c
-            if alt < cost[n]:
-                cost[n] = alt
-                prev[n] = v
-                if n not in queue:
-                    heappush(queue, (alt, n))
-     
+        if is_goal(node[1]):
+            print ("Found it")
+            print (node[0], "\n", node[1], "\n", node[2])
+            return
 
+        for a, s, c in graph(node[1]):
+            #print ("@@@@@  ", a, "    ", s, "     ", c)
+            #parent cost + new cost
+            alt = node[0] + c
+            #print (alt)
+            if s not in cost.keys() or alt < cost[s]:
+                cost[s] = alt
+                prev[s] = node
+                new_node = (alt, s, a)
+                if new_node not in queue:
+                    heappush(queue, new_node)
     # Failed to find a path
     print("Failed to find a path from", state, 'within time limit.')
     return None
@@ -194,7 +193,7 @@ if __name__ == '__main__':
     state = State({key: 0 for key in Crafting['Items']})
     state.update(Crafting['Initial'])
 
-"""
+    """
     print ("Original State: ", state)
     newstate = state.copy();
     for i in all_recipes:
@@ -209,10 +208,9 @@ if __name__ == '__main__':
         print("goal satisfied")
     else:
         print("goal failed")
-"""
+    """
     # Search - This is you!
-
-
+    search(graph, state, is_goal, 30, heuristic)
 
 
 
