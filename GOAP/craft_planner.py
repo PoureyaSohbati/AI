@@ -100,23 +100,50 @@ def graph(state):
             yield (r.name, r.effect(state), r.cost)
 
 
-def heuristic(state):
-    # This heuristic function should guide your search.
-    return 0
+def make_heuristic(recipes, goal):
+    # sees what goals need
+    requires = []
+    consumes = {}
+
+    def rec(goal):
+        for goal_name, goal_amount in goal.items():
+            #print("Goal Name: ", goal_name, "\nGoal Amount: ", goal_amount)
+            for receipe_name, rule in recipes.items():
+                if goal_name in rule['Produces']:
+                    if 'Requires' in rule:
+                        for name in rule['Requires']:
+                            if name not in requires:
+                                #####################
+                                if name != "iron_pickaxe" and name != "iron_axe":
+                                #####################
+                                    requires.append(name)
+                                    rec({name: 1})
+                    if 'Consumes' in rule:
+                        for name in rule['Consumes']:
+                            if name not in consumes:
+                                consumes[name] = rule['Consumes'][name] * goal_amount
+                                rec({name: rule['Consumes'][name] * goal_amount})
+                            else:
+                                consumes[name] += rule['Consumes'][name] * goal_amount
 
 
-"""
-def search(graph, state, is_goal, limit, heuristic):
-    start_time = time()
+    def heuristic(state, action):
+        # once you have upgraded version of something don't make the old version
+        # once you have upgraded version of something don't use the old version
+        for item in state.keys():
+            if state[item] > 0:
+                if (item not in consumes or consumes[item] < state[item]) and (item not in requires or state[item] > 1):
+                    return inf
+        return 0
 
-    # Search
-    while time() - start_time < limit:
-        pass
 
-    # Failed to find a path
-    print("Failed to find a path from", state, 'within time limit.')
-    return None
-"""
+    rec(goal)               
+
+    print ("requires: ", requires)
+    print ("consumes: ", consumes)
+
+    return heuristic
+
 
 def search(graph, state, is_goal, limit, heuristic):
     start_time = time()
@@ -125,43 +152,34 @@ def search(graph, state, is_goal, limit, heuristic):
     prev = {}
     action = []
 
-    """
-    for vertex in graph['spaces']:
-        cost[vertex] = inf
-        prev[vertex] = None
-    """
-
     cost[state] = 0
     prev[state] = None
-    #action[state] = None
-    #heappush(queue, (cost[state], state, action[state]))
-    heappush(queue, (cost[state], state, None))
-    #heappush(queue, (cost[state], state))
+    heappush(queue, (0, (cost[state], state, None)))
 
     # Search
     while time() - start_time < limit:
-        node = heappop(queue)
-        
+        estimatedDist, node = heappop(queue)
+        if (estimatedDist == inf):
+            print ("wtf")
+
         if is_goal(node[1]):
             total_cost = node[0]
             while node != None:
                 action.append(node[2])
                 node = prev[node[1]]
             action.reverse()
-            print(time() - start_time)
+            print("Time: ", time() - start_time)
             return total_cost, action
 
         for a, s, c in graph(node[1]):
-            #print ("@@@@@  ", a, "    ", s, "     ", c)
-            #parent cost + new cost
             alt = node[0] + c
             if s not in cost.keys() or alt < cost[s]:
                 cost[s] = alt
                 prev[s] = node
-                #action[s] = a
                 new_node = (alt, s, a)
                 if new_node not in queue:
-                    heappush(queue, new_node)
+                    heappush(queue, (alt+heuristic(s), new_node))
+
     # Failed to find a path
     print("Failed to find a path from", state, 'within time limit.')
     return None, None
@@ -193,27 +211,11 @@ if __name__ == '__main__':
 
     # Create a function which checks for the goal
     is_goal = make_goal_checker(Crafting['Goal'])
+    heuristic = make_heuristic(Crafting['Recipes'], Crafting['Goal'])
 
     # Initialize first state from initial inventory
     state = State({key: 0 for key in Crafting['Items']})
     state.update(Crafting['Initial'])
-
-    """
-        print ("Original State: ", state)
-        newstate = state.copy();
-        for i in all_recipes:
-            if i.name == "craft furnace at bench":
-                if i.check(state) == False:
-                    print ("fuck")
-                else:
-                    newstate = i.effect(state)
-                    print ("New State: ", newstate)
-
-        if is_goal(newstate):
-            print("goal satisfied")
-        else:
-            print("goal failed")
-    """
 
     # Search - This is you!
     total_cost, actions = search(graph, state, is_goal, 1000, heuristic)
@@ -227,5 +229,5 @@ if __name__ == '__main__':
                     print (recipe.cost, ", ", recipe.name, "-> \n", state, "\n")
         print("total_cost: ", total_cost, ", length: ", len(actions), "\n\n")
 
-
+    
 
