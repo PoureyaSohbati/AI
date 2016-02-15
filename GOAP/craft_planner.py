@@ -148,6 +148,7 @@ def search(graph, state, is_goal, limit, heuristic):
                 action.append(node[2])
                 node = prev[node[1]]
             action.reverse()
+            print(time() - start_time)
             return total_cost, action
 
         for a, s, c in graph(node[1]):
@@ -163,7 +164,7 @@ def search(graph, state, is_goal, limit, heuristic):
                     heappush(queue, new_node)
     # Failed to find a path
     print("Failed to find a path from", state, 'within time limit.')
-    return None
+    return None, None
 
 
 if __name__ == '__main__':
@@ -215,15 +216,16 @@ if __name__ == '__main__':
     """
 
     # Search - This is you!
-    total_cost, actions = search(graph, state, is_goal, 30, heuristic)
+    total_cost, actions = search(graph, state, is_goal, 1000, heuristic)
+    #if actions:
+        #print ("\n\n", state, "\n")
     if actions:
-        print (state)
-    for action in actions:
-        for recipe in all_recipes:
-            if action == recipe.name:
-                state = recipe.effect(state)
-                print (state)
-    print("total_cost: ", total_cost, ", length: ", len(actions))
+        for action in actions:
+            for recipe in all_recipes:
+                if action == recipe.name:
+                    state = recipe.effect(state)
+                    print (recipe.cost, ", ", recipe.name, "-> \n", state, "\n")
+        print("total_cost: ", total_cost, ", length: ", len(actions), "\n\n")
 
 
 
