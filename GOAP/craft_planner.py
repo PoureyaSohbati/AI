@@ -1,7 +1,7 @@
 import json
 from collections import namedtuple, defaultdict, OrderedDict
 from timeit import default_timer as time
-from math import sqrt, inf
+from math import sqrt, inf, ceil
 from heapq import heappush, heappop
 
 Recipe = namedtuple('Recipe', ['name', 'check', 'effect', 'cost'])
@@ -103,6 +103,110 @@ def graph(state):
 def make_heuristic(recipes, goal):
     # sees what goals need
     requires = []
+    consumes = []
+    c2 = {}
+    r = {}
+    c = {}
+
+
+    def RequireOrConsume(goal):
+        goal_name, goal_amount = goal
+        for receipe_name, rule in recipes.items():
+            if 'Requires' in rule:
+                if goal_name in rule['Requires']:
+                    requires.append(goal_name)
+                    break
+        for receipe_name, rule in recipes.items():
+            if 'Consumes' in rule:
+                if goal_name in rule['Consumes']:
+                    consumes.append(goal_name)
+                    c2[goal_name] = goal_amount
+                    break
+
+
+    def rec(goal):
+        for goal_name, goal_amount in goal.items():
+            for receipe_name, rule in recipes.items():
+                if goal_name in rule['Produces']:
+                    p_amount = rule['Produces'][goal_name]
+                    if 'Requires' in rule:
+                        for name in rule['Requires']:
+                            if name not in requires:
+                                requires.append(name)
+                                rec({name: 1})
+                    if 'Consumes' in rule:
+                        for name in rule['Consumes']:
+                            if name not in consumes:
+                                consumes.append(name)
+                                rec({name: 1})
+
+
+    def everyThingToDict():
+        for item in requires:
+            r[item] = []
+            for receipe_name, rule in recipes.items(): 
+                if item in rule['Produces']:
+                    if 'Consumes' in rule:
+                        for name in rule['Consumes']:
+                            r[item].append({name: rule['Consumes'][name]})
+        for item in consumes:
+            c[item] = []
+            for receipe_name, rule in recipes.items(): 
+                if item in rule['Produces']:
+                    if 'Consumes' in rule:
+                        for name in rule['Consumes']:
+                            c[item].append({name: rule['Consumes'][name]})
+
+
+
+    def heuristic(state, action):
+        # once you have upgraded version of something don't make the old version
+        # once you have upgraded version of something don't use the old version
+        # once you made an item that is  a requirement don't make it again unless it's the goal
+        # if item is not needed
+        produce = list(recipes[action]['Produces'].items())[0]
+        pName, pAmount = produce
+        #print (produce)
+
+        if pName not in consumes and pName not in requires:
+            print (pName)
+            return inf
+        # if already have that required item
+        if pName in requires and pName in state and state[pName] > 1:
+            return inf
+        # if we need that item to satisfy goal do it
+        if pName in c2:
+            if pName in state:
+                if state[pName] > c2[pName]:
+                    return inf
+            return 0
+
+        if we have too much of that consumable
+        if produce in consumes:
+            for item in re
+
+
+        return 0
+
+        
+
+    for (goal_name, goal_amount) in goal.items():
+        RequireOrConsume((goal_name, goal_amount))
+    rec(goal)      
+    everyThingToDict()
+    
+    #print ("\nrequires: ", requires)
+    #print ("\nconsumes: ", consumes)
+    print ("\nr: ", r)
+    print ("\nc: ", c)
+    print ("\nc2: ", c2)
+
+    return heuristic
+
+"""
+def make_heuristic(recipes, goal):
+    # sees what goals need
+    requires = {}
     consumes = {}
 
     def rec(goal):
@@ -110,33 +214,57 @@ def make_heuristic(recipes, goal):
             #print("Goal Name: ", goal_name, "\nGoal Amount: ", goal_amount)
             for receipe_name, rule in recipes.items():
                 if goal_name in rule['Produces']:
+                    p_amount = rule['Produces'][goal_name]
                     if 'Requires' in rule:
                         for name in rule['Requires']:
                             if name not in requires:
-                                #####################
-                                #if name != "iron_pickaxe" and name != "iron_axe":
-                                #####################
-                                requires.append(name)
-                                rec({name: 1})
+                                requires[name] = []
+                                rec({name: 1})           
                     if 'Consumes' in rule:
                         for name in rule['Consumes']:
-                            if name not in consumes:
-                                consumes[name] = rule['Consumes'][name] * goal_amount
-                                rec({name: rule['Consumes'][name] * goal_amount})
-                            else:
-                                consumes[name] += rule['Consumes'][name] * goal_amount
+                            howMuch = rule['Consumes'][name]
+                            #howMuch = ceil(goal_amount * rule['Consumes'][name] / p_amount)
+                            if goal_name in requires and name not in requires[goal_name]:
+                                requires[goal_name].append({name: howMuch})
+                            if goal_name not in requires:
+                                if goal_name in consumes and name not in consumes[goal_name]:
+                                    consumes[goal_name].append({name: howMuch})
+                                elif goal_name not in consumes:
+                                    consumes[goal_name] = []
+                                    rec({name: 1})
 
+
+                            
+                                howMuch = ceil(goal_amount * rule['Consumes'][name] / p_amount)
+                                if name not in consumes:
+                                    consumes[name] = rule['Consumes'][name] * howMuch
+                                    rec({name: consumes[name]})
+                                else:
+                                    consumes[name] = rule['Consumes'][name] * howMuch
+                            
 
     def heuristic(state, action):
         # once you have upgraded version of something don't make the old version
         # once you have upgraded version of something don't use the old version
         # once you made an item that is  a requirement don't make it again unless it's the goal
+        
+        for item in state.keys():
+            if state[item] > 0:
+                if (item not in consumes or consumes[item] < state[item]):
+                    if (item not in requires):
+                        return inf
+                    else:
+                        if ((state[item] > 1 and item not in goal) or (item in goal and goal[item] < state[item])):
+                            return inf
+
+        return 0
+
         for item in state.keys():
             if state[item] > 0:
                 if (item not in consumes or consumes[item] < state[item]) and (item not in requires or state[item] > 1):
                     return inf
         return 0
-
+        
 
     rec(goal)               
 
@@ -144,8 +272,7 @@ def make_heuristic(recipes, goal):
     print ("consumes: ", consumes)
 
     return heuristic
-
-
+"""
 def search(graph, state, is_goal, limit, heuristic):
     start_time = time()
     queue = []
@@ -155,13 +282,16 @@ def search(graph, state, is_goal, limit, heuristic):
 
     cost[state] = 0
     prev[state] = None
-    heappush(queue, (0, (cost[state], state, None)))
+
+    # heuristic, cost, state, action
+    heappush(queue, (0, (0, state, None)))
 
     # Search
     while time() - start_time < limit:
         estimatedDist, node = heappop(queue)
-        if (estimatedDist == inf):
-            print ("wtf")
+        #if (estimatedDist == inf):
+            #print ("wtf")
+        #print(node[2])
 
         if is_goal(node[1]):
             total_cost = node[0]
@@ -174,7 +304,7 @@ def search(graph, state, is_goal, limit, heuristic):
 
         for a, s, c in graph(node[1]):
             alt = node[0] + c
-            if s not in cost.keys() or alt < cost[s]:
+            if s not in cost or alt < cost[s]:
                 cost[s] = alt
                 prev[s] = node
                 new_node = (alt, s, a)
