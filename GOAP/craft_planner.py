@@ -181,7 +181,7 @@ def make_heuristic(recipes, goal):
                     return inf
             return 0
 
-        if we have too much of that consumable
+        # if we have too much of that consumable
         if produce in consumes:
             for item in re
 
