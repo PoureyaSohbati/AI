@@ -114,10 +114,10 @@ def make_heuristic(recipes, goal):
                         for name in rule['Requires']:
                             if name not in requires:
                                 #####################
-                                if name != "iron_pickaxe" and name != "iron_axe":
+                                #if name != "iron_pickaxe" and name != "iron_axe":
                                 #####################
-                                    requires.append(name)
-                                    rec({name: 1})
+                                requires.append(name)
+                                rec({name: 1})
                     if 'Consumes' in rule:
                         for name in rule['Consumes']:
                             if name not in consumes:
@@ -130,6 +130,7 @@ def make_heuristic(recipes, goal):
     def heuristic(state, action):
         # once you have upgraded version of something don't make the old version
         # once you have upgraded version of something don't use the old version
+        # once you made an item that is  a requirement don't make it again unless it's the goal
         for item in state.keys():
             if state[item] > 0:
                 if (item not in consumes or consumes[item] < state[item]) and (item not in requires or state[item] > 1):
@@ -178,7 +179,7 @@ def search(graph, state, is_goal, limit, heuristic):
                 prev[s] = node
                 new_node = (alt, s, a)
                 if new_node not in queue:
-                    heappush(queue, (alt+heuristic(s), new_node))
+                    heappush(queue, (alt+heuristic(s, a), new_node))
 
     # Failed to find a path
     print("Failed to find a path from", state, 'within time limit.')
