@@ -108,6 +108,8 @@ def make_heuristic(recipes, goal):
     r = {}
     c = {}
     actions = {}
+    subSet = {'wood': {'plank': 4, 'stick': 8}, 'plank': {'stick': 2}}
+    print (subSet)
 
 
     def requireOrConsume(goal):
@@ -186,29 +188,50 @@ def make_heuristic(recipes, goal):
 
         # if item is not needed
         if pName not in c and pName not in r:
-            print (pName)
+            #print ("____1____")
             return inf
         # if already have that required item
         if pName in r and state[pName] > 1:
+            #print ("____2____")
             return inf
         # if we need that item to satisfy goal do it
         if pName in c2 and state[pName] <= c2[pName]:
+            #print ("____3____")
             return 0
 
 
-        # if we have too muc of that consumable
+        # if we have too much of a consumable
         if pName in c:
+            #print ("pName: ", pName)
             for s in state:
-                if state[s] == 0 and s in r and pName in r[s]:
-                    if r[s][pName] >= state[pName] or pAmount > 1:
-                        #print ("asdfasdf", action, ", ", pName, ": (state: ", state[pName], "should have: ", r[s][pName], " for ", s, ") ")
-                        return 0
+
+                # if there is something in inventory that has not been created and is also a requirment
+                if state[s] == 0 and s in r:
+
+                    # if that item needs pName
+                    if pName in r[s]:
+                        #print ("\n", action, ", ", pName, ": (state: ", state[pName], ", should have: ", r[s][pName], " for ", s, ") \n")
+                        if r[s][pName] >= state[pName] or pAmount > 1:
+                            return 0
+
+                    # if that item needs subsets of pName
+                    else:
+                        if pName in subSet:
+                            for test in subSet[pName]:
+                                #print ("asdfasdfasDF", test)
+                                if test in r[s]:
+
+                                    #print ("\n", action, ", ", pName, ": (state: ", state[pName], ", should have: ", r[s][pName], " for ", s, ") \n")
+                                    if r[s][test] >= state[test]:
+                                        return 0
+
+            #print ("____4.2____")
             return inf
 
 
 
         # once you have upgraded version of something don't use the old version
-        """
+        
         if pName in actions:
             if 'Requires' in recipes[action]:
                 usedItem = list(recipes[action]['Requires'].keys())[0] 
@@ -219,14 +242,8 @@ def make_heuristic(recipes, goal):
                     if state[a] > 0:
                         print("1231212412412")
                         return inf
-        """
         
         
-
-        
-        
-
-
         return 0
 
         
@@ -334,7 +351,7 @@ def search(graph, state, is_goal, limit, heuristic):
         estimatedDist, node = heappop(queue)
         if (estimatedDist == inf):
             print ("wtf")
-        print(node[2], node[1])
+        #print(node[2], node[1])
 
 
         if is_goal(node[1]):
