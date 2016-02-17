@@ -107,21 +107,18 @@ def make_heuristic(recipes, goal):
     c2 = {}
     r = {}
     c = {}
+    actions = {}
 
 
-    def RequireOrConsume(goal):
+    def requireOrConsume(goal):
         goal_name, goal_amount = goal
         for receipe_name, rule in recipes.items():
             if 'Requires' in rule:
                 if goal_name in rule['Requires']:
                     requires.append(goal_name)
                     break
-        for receipe_name, rule in recipes.items():
-            if 'Consumes' in rule:
-                if goal_name in rule['Consumes']:
-                    consumes.append(goal_name)
-                    c2[goal_name] = goal_amount
-                    break
+        consumes.append(goal_name)
+        c2[goal_name] = goal_amount
 
 
     def rec(goal):
@@ -158,12 +155,31 @@ def make_heuristic(recipes, goal):
                             c[item].append({name: rule['Consumes'][name]})
 
 
+    def findSameActions():
+        temp = []
+        for receipe_name, rule in recipes.items():
+            if list(rule['Produces'].keys())[0] not in actions:
+                actions[list(rule['Produces'].keys())[0]] = {}
+            if 'Requires' in rule:
+                n = list(rule['Requires'].keys())[0]
+            else:
+                n = None
+            actions[list(rule['Produces'].keys())[0]][n] = rule['Time']
+
+
+        for action in actions:
+            if len(list(actions[action].items())) == 1:
+                print (actions[action])
+                temp.append(action)
+                
+        for t in temp:
+            del actions[t]
+
+
 
     def heuristic(state, action):
-        # once you have upgraded version of something don't make the old version
-        # once you have upgraded version of something don't use the old version
-        # once you made an item that is  a requirement don't make it again unless it's the goal
         # if item is not needed
+
         produce = list(recipes[action]['Produces'].items())[0]
         pName, pAmount = produce
         #print (produce)
@@ -172,18 +188,33 @@ def make_heuristic(recipes, goal):
             print (pName)
             return inf
         # if already have that required item
-        if pName in requires and pName in state and state[pName] > 1:
+        if pName in requires and state[pName] > 1:
             return inf
         # if we need that item to satisfy goal do it
-        if pName in c2:
-            if pName in state:
-                if state[pName] > c2[pName]:
-                    return inf
+        if pName in c2 and state[pName] <= c2[pName]:
             return 0
 
         # if we have too much of that consumable
-        #if produce in consumes:
-            #for item in re
+        
+
+        # once you have upgraded version of something don't use the old version
+        """
+        if pName in actions:
+            if 'Requires' in recipes[action]:
+                usedItem = list(recipes[action]['Requires'].keys())[0] 
+            else:
+                usedItem = None
+            for a in list(actions[pName].keys()):
+                if a != usedItem and actions[pName][a] < actions[pName][usedItem]:
+                    if state[a] > 0:
+                        return inf
+        """
+
+        
+        
+
+        
+        
 
 
         return 0
@@ -191,7 +222,8 @@ def make_heuristic(recipes, goal):
         
 
     for (goal_name, goal_amount) in goal.items():
-        RequireOrConsume((goal_name, goal_amount))
+        requireOrConsume((goal_name, goal_amount))
+    findSameActions()
     rec(goal)      
     everyThingToDict()
     
@@ -200,6 +232,7 @@ def make_heuristic(recipes, goal):
     print ("\nr: ", r)
     print ("\nc: ", c)
     print ("\nc2: ", c2)
+    print ("\nActions: ", actions)
 
     return heuristic
 
