@@ -99,7 +99,7 @@ def graph(state):
         if r.check(state):
             yield (r.name, r.effect(state), r.cost)
 
-
+"""
 def make_heuristic(recipes, goal):
     # sees what goals need
     requires = []
@@ -109,7 +109,7 @@ def make_heuristic(recipes, goal):
     c = {}
     actions = {}
     subSet = {'wood': {'plank': 4, 'stick': 8}, 'plank': {'stick': 2}}
-    print (subSet)
+    subSet2 = {'stick': {'plank': 2, 'wood': 8}, 'plank': {'wood': 4}}
 
 
     def requireOrConsume(goal):
@@ -182,8 +182,7 @@ def make_heuristic(recipes, goal):
 
 
     def heuristic(state, action):
-        produce = list(recipes[action]['Produces'].items())[0]
-        pName, pAmount = produce
+       c
 
 
         # if item is not needed
@@ -214,17 +213,39 @@ def make_heuristic(recipes, goal):
                         if r[s][pName] >= state[pName] or pAmount > 1:
                             return 0
 
-                    # if that item needs subsets of pName
+                    # if that item needs subset of pName
                     else:
+                        # if the subset of pName exist
                         if pName in subSet:
-                            for test in subSet[pName]:
+                            for sub_pName in subSet[pName]:
+                                #print ("asdfadsf", sub_pName, subSet[pName])
                                 #print ("asdfasdfasDF", test)
-                                if test in r[s]:
+                                if sub_pName in r[s]:
+                                    #(stick)
+                                    if state[sub_pName] < r[s][sub_pName]:
+                                        #print ("i dont have ", sub_pName, state[sub_pName], " < ", r[s][sub_pName])
+                                        flag = False
+                                        for i in subSet2[sub_pName]:
+                                            #print ("sadfasdf", i, subSet2[sub_pName][i])
+                                            howMuchNeeded = r[s][sub_pName] - state[sub_pName]
+                                           
+                                            if i == pName:
+                                                #print("asdfasdf")
+                                                howMuchWeHave = (state[i] - 1) * subSet2[sub_pName][i]
+                                            else:
+                                                howMuchWeHave = state[i] * subSet2[sub_pName][i]
+                                            
+                                            if howMuchWeHave > howMuchNeeded:
+                                                #print(i, " = ", state[i], "@@@@", howMuchWeHave, howMuchNeeded)
+                                                flag = True
+                                        if not flag:
+                                            return 0
 
-                                    #print ("\n", action, ", ", pName, ": (state: ", state[pName], ", should have: ", r[s][pName], " for ", s, ") \n")
-                                    if r[s][test] >= state[test]:
-                                        return 0
+                                                
 
+
+
+                                   
             #print ("____4.2____")
             return inf
 
@@ -263,7 +284,7 @@ def make_heuristic(recipes, goal):
 
     return heuristic
 
-"""
+
 def make_heuristic(recipes, goal):
     # sees what goals need
     requires = {}
@@ -333,6 +354,83 @@ def make_heuristic(recipes, goal):
 
     return heuristic
 """
+
+
+def make_heuristic(recipes, goal):
+
+    requires = []
+    consumes = []
+    r = {}
+
+
+
+    def everyThingToDict():
+        for item in requires:
+            r[item] = 1
+                   
+        for receipe_name, rule in recipes.items(): 
+            if 'Consumes' in rule:
+                for name in rule['Consumes']:
+                    if name not in r or r[name] < rule['Consumes'][name]:
+                        r[name] = rule['Consumes'][name]
+                for name in rule['Produces']:
+                    if name not in r or r[name] < rule['Produces'][name]:
+                        r[name] = rule['Produces'][name]
+
+
+    def requireOrConsume(goal):
+        goal_name, goal_amount = goal
+        print (goal_name)
+        if goal_name not in r or r[goal_name] < goal_amount:
+            r[goal_name] = goal_amount
+
+
+    def rec(goal):
+        for goal_name, goal_amount in goal.items():
+            for receipe_name, rule in recipes.items():
+                if goal_name in rule['Produces']:
+                    p_amount = rule['Produces'][goal_name]
+                    if 'Requires' in rule:
+                        for name in rule['Requires']:
+                            if name not in requires:
+                                requires.append(name)
+                                rec({name: 1})
+                    if 'Consumes' in rule:
+                        for name in rule['Consumes']:
+                            if name not in consumes:
+                                consumes.append(name)
+                                rec({name: 1})
+
+
+    def heuristic(state):
+        #print (state)
+
+        for item in state:
+            if state[item] == 0: 
+                continue
+            if item in r and state[item] > r[item]:
+                #print("____1____")
+                return inf
+
+        return 0
+        
+      
+
+    
+
+    rec(goal)
+    everyThingToDict()
+    for (goal_name, goal_amount) in goal.items():
+       requireOrConsume((goal_name, goal_amount)) 
+       
+    #print (requires)
+    #print (consumes)
+    print (r)
+
+
+    return heuristic
+
+
 def search(graph, state, is_goal, limit, heuristic):
     start_time = time()
     queue = []
@@ -349,8 +447,10 @@ def search(graph, state, is_goal, limit, heuristic):
     # Search
     while time() - start_time < limit:
         estimatedDist, node = heappop(queue)
-        if (estimatedDist == inf):
-            print ("wtf")
+
+        #if (estimatedDist == inf):
+            #print ("wtf", state)
+            #print("asdfadsf",node[2], node[1])
         #print(node[2], node[1])
 
 
@@ -370,7 +470,8 @@ def search(graph, state, is_goal, limit, heuristic):
                 prev[s] = node
                 new_node = (alt, s, a)
                 if new_node not in queue:
-                    heappush(queue, (alt+heuristic(s, a), new_node))
+                    heappush(queue, (alt+heuristic(s), new_node))
+
 
     # Failed to find a path
     print("Failed to find a path from", state, 'within time limit.')
@@ -410,7 +511,7 @@ if __name__ == '__main__':
     state.update(Crafting['Initial'])
 
     # Search - This is you!
-    total_cost, actions = search(graph, state, is_goal, 1000000, heuristic)
+    total_cost, actions = search(graph, state, is_goal, 30, heuristic)
     #if actions:
         #print ("\n\n", state, "\n")
     if actions:
