@@ -116,7 +116,7 @@ def make_heuristic(recipes, goal):
             if 'Requires' in rule:
                 if goal_name in rule['Requires']:
                     requires.append(goal_name)
-                    break
+                    return
         consumes.append(goal_name)
         c2[goal_name] = goal_amount
 
@@ -140,19 +140,21 @@ def make_heuristic(recipes, goal):
 
     def everyThingToDict():
         for item in requires:
-            r[item] = []
+            r[item] = {}
             for receipe_name, rule in recipes.items(): 
                 if item in rule['Produces']:
                     if 'Consumes' in rule:
                         for name in rule['Consumes']:
-                            r[item].append({name: rule['Consumes'][name]})
+                            #r[item].append({name: rule['Consumes'][name]})
+                            r[item][name] = rule['Consumes'][name]
         for item in consumes:
-            c[item] = []
+            c[item] = {}
             for receipe_name, rule in recipes.items(): 
                 if item in rule['Produces']:
                     if 'Consumes' in rule:
                         for name in rule['Consumes']:
-                            c[item].append({name: rule['Consumes'][name]})
+                            #c[item].append({name: rule['Consumes'][name]})
+                            c[item][name] = rule['Consumes'][name]
 
 
     def findSameActions():
@@ -169,7 +171,7 @@ def make_heuristic(recipes, goal):
 
         for action in actions:
             if len(list(actions[action].items())) == 1:
-                print (actions[action])
+                #print (actions[action])
                 temp.append(action)
                 
         for t in temp:
@@ -178,24 +180,32 @@ def make_heuristic(recipes, goal):
 
 
     def heuristic(state, action):
-        # if item is not needed
-
         produce = list(recipes[action]['Produces'].items())[0]
         pName, pAmount = produce
-        #print (produce)
 
-        if pName not in consumes and pName not in requires:
+
+        # if item is not needed
+        if pName not in c and pName not in r:
             print (pName)
             return inf
         # if already have that required item
-        if pName in requires and state[pName] > 1:
+        if pName in r and state[pName] > 1:
             return inf
         # if we need that item to satisfy goal do it
         if pName in c2 and state[pName] <= c2[pName]:
             return 0
 
-        # if we have too much of that consumable
-        
+
+        # if we have too muc of that consumable
+        if pName in c:
+            for s in state:
+                if state[s] == 0 and s in r and pName in r[s]:
+                    if r[s][pName] >= state[pName] or pAmount > 1:
+                        #print ("asdfasdf", action, ", ", pName, ": (state: ", state[pName], "should have: ", r[s][pName], " for ", s, ") ")
+                        return 0
+            return inf
+
+
 
         # once you have upgraded version of something don't use the old version
         """
@@ -207,9 +217,9 @@ def make_heuristic(recipes, goal):
             for a in list(actions[pName].keys()):
                 if a != usedItem and actions[pName][a] < actions[pName][usedItem]:
                     if state[a] > 0:
+                        print("1231212412412")
                         return inf
         """
-
         
         
 
@@ -322,9 +332,10 @@ def search(graph, state, is_goal, limit, heuristic):
     # Search
     while time() - start_time < limit:
         estimatedDist, node = heappop(queue)
-        #if (estimatedDist == inf):
-            #print ("wtf")
-        #print(node[2])
+        if (estimatedDist == inf):
+            print ("wtf")
+        print(node[2], node[1])
+
 
         if is_goal(node[1]):
             total_cost = node[0]
@@ -382,7 +393,7 @@ if __name__ == '__main__':
     state.update(Crafting['Initial'])
 
     # Search - This is you!
-    total_cost, actions = search(graph, state, is_goal, 1000, heuristic)
+    total_cost, actions = search(graph, state, is_goal, 1000000, heuristic)
     #if actions:
         #print ("\n\n", state, "\n")
     if actions:
