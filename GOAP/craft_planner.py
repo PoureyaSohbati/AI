@@ -182,7 +182,6 @@ def make_heuristic(recipes, goal):
 
 
     def heuristic(state, action):
-       c
 
 
         # if item is not needed
@@ -361,7 +360,7 @@ def make_heuristic(recipes, goal):
     requires = []
     consumes = []
     r = {}
-
+    t = {'ingot': 6, 'stick': 1}
 
 
     def everyThingToDict():
@@ -402,8 +401,39 @@ def make_heuristic(recipes, goal):
                                 rec({name: 1})
 
 
-    def heuristic(state):
+    def heuristic(state, action):
         #print (state)
+
+        pName, pAmount = list(recipes[action]['Produces'].items())[0]
+
+
+        if pName in t and state[pName] <= r[pName]:
+            #print("Asdfasfdasf")
+            #print (pName, state[pName])
+            return -1000
+
+        
+        #print (pName, state, s, "\n\n")
+        """
+        flag = False
+        for goal_name, goal_amount in goal.items():
+            for receipe_name, rule in recipes.items():
+                if goal_name in rule['Produces']:
+                    if 'Requires' in rule:
+                        for name in rule['Requires']:
+                            if s[name] < rule['Requires'][name]:
+                                flag = True
+                                break
+                    if 'Consumes' in rule:
+                        for name in rule['Consumes']:
+                            if s[name] < rule['Consumes'][name]:
+                                flag = True
+                                break
+        if not flag:
+            print ("affa")
+            return inf
+        """
+        
 
         for item in state:
             if state[item] == 0: 
@@ -411,6 +441,8 @@ def make_heuristic(recipes, goal):
             if item in r and state[item] > r[item]:
                 #print("____1____")
                 return inf
+
+        
 
         return 0
         
@@ -448,8 +480,8 @@ def search(graph, state, is_goal, limit, heuristic):
     while time() - start_time < limit:
         estimatedDist, node = heappop(queue)
 
-        #if (estimatedDist == inf):
-            #print ("wtf", state)
+        if (estimatedDist == inf):
+            print ("wtf", state)
             #print("asdfadsf",node[2], node[1])
         #print(node[2], node[1])
 
@@ -470,7 +502,7 @@ def search(graph, state, is_goal, limit, heuristic):
                 prev[s] = node
                 new_node = (alt, s, a)
                 if new_node not in queue:
-                    heappush(queue, (alt+heuristic(s), new_node))
+                    heappush(queue, (alt+heuristic(s, a), new_node))
 
 
     # Failed to find a path
